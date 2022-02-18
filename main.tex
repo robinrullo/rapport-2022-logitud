@@ -1,0 +1,135 @@
+\documentclass{rapportUHA40}
+\usepackage{lipsum}
+\title{Rapport RULLO Robin 2022} %Titre du fichier
+
+\begin{document}
+
+%----------- Informations du rapport ---------
+
+\logoentreprise{logos/logitud-big.png}
+
+\titre{Refonte et amélioration d'une application de cartographie SIG} % Titre du fichier
+\pied{Refonte et amélioration d'une \\ application de cartographie SIG} % Pied de page
+
+
+\typerapport{Rapport de stage} % Type de rapport
+\trigrammemention{RULLO Robin} % Pour le bas de la page
+\filiere{Licence professionnelle \\ développeur informatique} % Nom de la filière
+\promotion{Promotion 2020-2021}
+\niveau{UHA 4.0.2}
+
+\eleve{Robin RULLO}
+
+\dates{14/02/2022 - 12/08/2022}
+
+% Informations tuteurs écoles
+\tuteurecole{
+    \textsc{Mounir ELBAZ} \\
+    mounir.elbaz@uha.fr
+} 
+
+\tuteurentreprise{
+    \textsc{EL Mahdi SAHI} \\
+    m-sahi@logitud.fr 
+}
+
+%----------- Initialisation -------------------
+
+\fairepagedegarde %Créer la page de garde        
+\fairemarges %Afficher les marges
+
+%----------- Abstract -------------------
+\vspace*{\stretch{1}}
+\begin{center}
+	\begin{abstract}
+        \lipsum[1-2]
+    \end{abstract}
+\end{center}
+\vspace*{\stretch{1}}
+\newpage
+
+%------------ Table des matières ----------------
+
+\tabledematieres % Créer la table de matières
+
+%------------ Corps du rapport ----------------
+
+
+%------------ Introduction ----------------
+
+\section{Introduction} 
+\lipsum[3-4] % Effacer cette ligne et écrire le texte souhaité
+
+
+
+
+\newpage
+%------------ Related work ----------------
+
+\section{Travaux connexes}
+\lipsum[1-2] 
+
+
+
+
+
+\newpage
+%------------ Methodology ----------------
+
+\section{Méthodologie}
+\lipsum[2-3]
+
+
+
+
+
+\newpage
+%------------ Application à l'analyse de texte ----------------
+
+\section{Section 1}
+
+
+
+%------------- Commandes utiles ----------------
+
+\section{Quelques commandes}
+
+Voici quelques commandes utiles :
+
+%------ Pour insérer et citer une image centralisée -----
+
+\insererfigure{logos/uha-big.png}{3cm}{Légende de la figure}{Label de la figure}
+% Le premier argument est le chemin pour la photo
+% Le deuxième est la hauteur de la photo
+% Le troisième la légende
+% Le quatrième le label
+
+Ici, je cite l'image \ref{fig: Label de la figure}
+
+
+%------- Pour insérer et citer une équation --------------
+
+\begin{equation} \label{eq: exemple}
+\rho + \Delta = 42
+\end{equation}
+
+L'équation \ref{eq: exemple} est cité ici. \\
+
+%------- Pour insérer des blocks de code --------------
+Affichage de blocs de codes:
+\begin{minted}[autogobble, linenos, frame = single]{java}
+public class HelloWorld {
+\end{minted}
+
+Reprendre la dernière numérotation:
+\begin{minted}[autogobble, linenos, firstnumber = last, frame = single]{java}
+  public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World!");
+    }
+
+}
+\end{minted}
+
+
+\end{document}
