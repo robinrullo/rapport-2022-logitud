@@ -1,7 +1,10 @@
 _*
 *.aux
 *.log
+*.lof
 *.nlo
 *.out
 *.toc
 *.gz
+
+.vscode

@@ -1,0 +1,146 @@
+\documentclass{rapportUHA40}
+\usepackage{lipsum}
+
+\title{Rapport RULLO Robin 2022} %Titre du fichier
+
+\begin{document}
+
+%----------- Informations du rapport ---------
+
+\logoentreprise{logos/logitud-big.png}
+
+\titre{Refonte et amélioration d'une application de cartographie SIG} % Titre du fichier
+\pied{Refonte et amélioration d'une \\ application de cartographie SIG} % Pied de page
+
+\typerapport{Rapport de stage} % Type de rapport
+\trigrammemention{RULLO Robin} % Pour le bas de la page
+\filiere{Licence professionnelle \\ développeur informatique} % Nom de la filière
+\promotion{Promotion 2020 – 2021}
+\niveau{UHA 4.0.2}
+
+\eleve{Robin RULLO}
+
+\dates{14/02/2022 – 12/08/2022}
+
+% Informations tuteurs écoles
+\tuteurecole{
+  \textsc{Mounir ELBAZ} \\
+  mounir.elbaz@uha.fr
+}
+
+\tuteurentreprise{
+  \textsc{EL Mahdi SAHI} \\
+  m-sahi@logitud.fr
+}
+
+%----------- Initialisation -------------------
+
+\fairepagedegarde%Créer la page de garde
+\fairemarges%Afficher les marges
+
+\pagenumbering{roman}
+
+%----------- Remerciements -------------------
+
+\vspace*{\stretch{1}}
+\begin{center}
+  \begin{abstract}
+    Je souhaite tout d’abord remercier Guillaume LOOS, responsable des
+    développements, qui m'a intégré dans l'équipe de Recherche et Développements.
+
+    Je tiens à remercier El Mahdi SAHI, responable du service R\&D ainsi que mon
+    collègue Mohamed TAMA, ingénieur géomaticien et développeur dans le service,
+    toujours disponnible et qui m'a pas mal forcé la main pour rédiger ce rapport
+    en temps et en heure. Merci à eux de m’avoir suivi et fait confiance tout au
+    long du stage.
+
+    Je remercie également tous les développeurs, les hotliners, les formateurs, et
+    plus généralement tous ceux qui ont pris le temps de répondre a mes questions
+    et avec qui j'ai pu échanger des connaissances pour ainsi progresser.
+  \end{abstract}
+\end{center}
+\vspace*{\stretch{1}}
+\newpage
+
+%------------ Table des matières ----------------
+
+\tabledematieres% Créer la table de matières
+
+%------------ Corps du rapport ----------------
+
+%------------ Introduction ----------------
+
+\pagenumbering{arabic}
+\section{Introduction}
+Logitud Solutions SAS est une entreprise spécialisée dans l'édition de
+logiciels pour les collectivités, dans les domaines de la population et de la
+sécurité, depuis 30 ans. Afin de rester leader du marché, elle doit faire face
+aux logiciels de la concurrence et est forcée de se maintenir à jour
+technologiquement. Elle a amorcé depuis quelques années la réécriture de ses
+applications lourdes, nécéssitant une installation sur un poste de travail,
+vers des applications web fonctionnant sur un navigateur web. Ces applications
+traitent un lot données géo-référencées, lesquelles nécessitant quelques fois
+des traitements. \\
+
+M'étant spécialisé dans les systèmes d'information géographique depuis le début
+de la formation à l'UHA 4.0, je souhaitais, en déposant une candidature
+spontannée, assoir mes connaissance en géomatique dans un milieu professionnel,
+entouré d'experts pouvant me guider et echanger leurs connaissances. \\\\
+
+Le rapport courvre la présentation de l'organisme dans lequel le stage a eu
+lieu, puis une présentation du stage. En fin, une conclusion boucle le rapport.
+
+L'application web SIG permettant de gérer les contextes géographiques de la
+suite d'applications n'est plus adapté aux nouveaux besoin et n'est pas
+suffisament robuste pour être déployé en production.
+
+%------------- Commandes utiles ----------------
+
+\section{Quelques commandes}
+
+Voici quelques commandes utiles :
+
+%------ Pour insérer et citer une image centralisée -----
+
+\insererfigure{logos/uha-big.png}{3cm}{Légende de la figure}{Label de la figure}
+% Le premier argument est le chemin pour la photo
+% Le deuxième est la hauteur de la photo
+% Le troisième la légende
+% Le quatrième le label
+
+Ici, je cite l'image \ref{fig: Label de la figure}
+
+%------- Pour insérer et citer une équation --------------
+
+\begin{equation} \label{eq: exemple}
+  \rho + \Delta = 42
+\end{equation}
+
+L'équation \ref{eq: exemple} est cité ici. \\
+
+%------- Pour insérer des blocks de code --------------
+Affichage de blocs de codes:
+\begin{minted}[autogobble, linenos, frame = single]{java}
+public class HelloWorld {
+\end{minted}
+
+Reprendre la dernière numérotation:
+\begin{minted}[autogobble, linenos, firstnumber = last, frame = single]{java}
+  public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World!");
+    }
+
+
+}
+\end{minted}
+
+It's also possible to link directly any word or \hyperlink{thesentence}{any
+  sentence} in you document.
+
+If you read this text, you will get no information. Really? Is there no
+information?
+
+For instance \hypertarget{thesentence}{this sentence}.
+
+\end{document}

@@ -21,10 +21,18 @@
 \setlength{\headheight}{3cm}
 \RequirePackage{url}
 \RequirePackage[hidelinks]{hyperref}%Paquet pour insérer légendes dans des sous-figures comme Figure 1a, 1b
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 \RequirePackage{geometry} %Configuration de la page
-
+\addto{\captionsfrench}{\renewcommand{\abstractname}{Remerciements}}
 \RequirePackage{minted} %Paquet pour insérer des code snippets
 \usemintedstyle{manni}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
 
 
 
@@ -78,7 +86,7 @@
 \begin{figure}
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{\logoentreprise}\par\vspace{1cm}
+        \includegraphics[width=0.8\textwidth]{\logoentreprise}\par\vspace{1cm} %Insertion du logo Entreprise
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -130,6 +138,7 @@
 
 \newcommand{\tabledematieres}{
 \tableofcontents
+\listoffigures
 \newpage
 }
 
@@ -141,6 +150,3 @@
 \label{fig: #4}
 \end{figure}
 }
-
-
-
