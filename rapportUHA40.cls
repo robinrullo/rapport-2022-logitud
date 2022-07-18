@@ -31,9 +31,9 @@
 \addto{\captionsfrench}{\renewcommand{\abstractname}{Remerciements}}
 \RequirePackage{minted} %Paquet pour insérer des code snippets
 \usemintedstyle{manni}
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}
-
+%\usepackage[scaled=0.92]{helvet}
+%\renewcommand\familydefault{\sfdefault} 
+%\usepackage[T1]{fontenc}
 
 
 %-------------------- Informations sur le rapport ----------------------
@@ -137,9 +137,12 @@
 }
 
 \newcommand{\tabledematieres}{
-\tableofcontents
-\listoffigures
-\newpage
+    { % Hide link's color locally
+        \hypersetup{hidelinks}
+        \tableofcontents
+        \listoffigures
+    }
+    \newpage
 }
 
 \newcommand{\insererfigure}[4]{
