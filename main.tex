@@ -5,7 +5,7 @@
 \newglossaryentry{applicationsmetier}
 {
   name=applications métier,
-  description={Applications déstinées à l'utilisateur final pour répondre à son besoin issu de son métier}
+  description={Applications destinées à l'utilisateur final pour répondre à son besoin issu de son métier}
 }
 \newglossaryentry{sig}
 {
@@ -15,12 +15,12 @@
 \newglossaryentry{reverse-geocoding}
 {
   name=reverse-geocoding,
-  description={Attribution d'une adresse à partir de coordonnées géographique}
+  description={Attribution d'une adresse à partir de coordonnées géographiques}
 }
 \newglossaryentry{SCRUM}
 {
   name=framework SCRUM,
-  description={Lié à la méthodologie Agile. Il améliore la productivité des équipes tout en permettant une optimisation du produit grâce au retours des clients}
+  description={Lié à la méthodologie Agile. Il améliore la productivité des équipes tout en permettant une optimisation du produit grâce aux retours réguliers des clients}
 }
 \newglossaryentry{agile}
 {
@@ -45,7 +45,7 @@
 \newglossaryentry{wrapper}
 {
   name=wrapper,
-  description={un wrapper est une entité qui encapsule et masque la complexité sous-jacente d'une autre entité au moyen d'interfaces bien définies. Dans le cas d'un wrapper HTTP, il encapsule et masque la couche HTTP et renvoie les données après traitement ou brut.}
+  description={Le wrapper est une entité qui encapsule et masque la complexité sous-jacente d'une autre entité au moyen d'interfaces bien définies. Dans le cas d'un wrapper HTTP, il encapsule et masque la couche HTTP et renvoie les données après traitement ou brut.}
 }
 \makeglossaries{}
 \makeindex
@@ -98,14 +98,14 @@
     développements, qui m'a permis d'intégrer dans l'équipe de Recherche et Développements.
     \vspace{1cm}
 
-    Je tiens à remercier El Mahdi SAHI, responable du service R\&D ainsi que mon
+    Je tiens à remercier El Mahdi SAHI, responsable du service R\&D ainsi que mon
     collègue Mohamed TAMA, ingénieur géomaticien et développeur, toujours
     disponible et qui m'a pas mal forcé la main pour rédiger ce rapport en temps et
     en heure. Merci à eux de m’avoir suivi et fait confiance tout au long du stage.
     \vspace{1cm}
 
     Je remercie également tous les développeurs, les hotliners, les formateurs, et
-    plus généralement tous ceux qui ont pris le temps de répondre a mes questions
+    plus généralement tous ceux qui ont pris le temps de répondre à mes questions
     et avec qui j'ai pu échanger et ainsi progresser.
   \end{abstract}
 \end{center}
@@ -128,21 +128,21 @@
 Logitud Solutions est une entreprise spécialisée dans l'édition de logiciels
 pour les collectivités, dans les domaines de la population et de la sécurité,
 depuis 30 ans. Le web s'étant beaucoup développé ses dernières années, les
-logicies sont devenus difficiles et couteux à maintenir. L'entreprise à alors a
+logiciels sont devenus difficiles et couteux à maintenir. L'entreprise a alors
 amorcé depuis quelques années la réécriture de ses applications lourdes liées
-au secteur de la sécurité (polices municipales) qui nécéssitent une
+au secteur de la sécurité (polices municipales) qui nécessitent une
 installation sur un poste de travail, vers des applications web fonctionnant
 sur un navigateur web ainsi que des applications pour mobiles.
 
-L'ensemble des applications clients lourds puis applications web font appel a
-des données géo-référencées. Le rôle de l'application web \gls{sig} \textsc{Map
-  Manager} est l'administration les données géographique. L'entreprise souhaite
+L'ensemble des applications clients lourds puis applications web font appel à
+des données géoréférencées. Le rôle de l'application web \gls{sig} \textsc{Map
+  Manager} est l'administration les données géographiques. L'entreprise souhaite
 faire évoluer l'application et la rendre plus ergonomique. Pour répondre aux
 nouveaux besoins, une refonte de l'application est nécessaire. \\
 
 Attiré et spécialisé dans les systèmes d'informations géographiques depuis le
 début de la formation à l'UHA 4.0, je souhaitais, en déposant ma candidature,
-assoir mes connaissance en géomatique dans un milieu professionnel, entouré
+assoir mes connaissances en géomatique dans un milieu professionnel, entouré
 d'experts pouvant me guider et échanger leurs connaissances.
 
 \vspace{2cm}
@@ -157,20 +157,20 @@ lieu, puis une présentation du stage. En fin, une conclusion boucle le rapport.
 Logitud Solutions est une société par actions simplifiée dont le siège social
 est situé dans la ZAC du Parc des Colline de Mulhouse – Didenheim. Elle compte
 également deux autres agences: l'agence centre à Saint-Avertin (37), et
-l’agence sud à Saint-Rémy-de-Provence (13). Elle est constitué de 90 employés
+l’agence sud à Saint-Rémy-de-Provence (13). Elle est constituée de 90 employés
 dont 30 développeurs. \\ Son secteur d'activité est l'édition d'outils
-numériques déstinés aux collectivités locales (communes, communautées de
+numériques destinés aux collectivités locales (communes, communautés de
 communes, villes). Elle distribue aujourd'hui trois gammes de logiciels.
 Chronologiquement:
 
 \begin{description}
   \item[La gamme population] – Elle est tournée vers la gestion administrative des
-    collectivitées. Elle facilite le travail des agents d'état civil et leurs
+    collectivités. Elle facilite le travail des agents d'état civil et leurs
     échanges avec les administrés avec des logiciels tels que Siècle, SuffrageWeb,
     Éternité, Avenir ou encore Populis.
-  \item[La gamme sécurité] Elle est orienté vers la gestion des métiers de la police
+  \item[La gamme sécurité] Elle est orientée vers la gestion des métiers de la police
     (organisation, gestion des fourrières, géo-verbalisation) et prévention de la
-    délinquance (geo-prévention délinquance et des incivilités).
+    délinquance (géo-prévention délinquance et des incivilités).
   \item[La gamme e-administration] Elle regroupe des services en ligne et mobiles à
     l'attention des citoyens.
 \end{description}
@@ -181,7 +181,7 @@ et les quatre cinquièmes en produits de sécurité (polices municipales).\\
 
 La méthodologie de travail adopté par les équipes de développement métier suit
 les principes du \gls{SCRUM} couplé à la méthodologie \Gls{agile}. Cependant
-l'équipe de R\&D dont est rataché le pôle de développement cartographique
+l'équipe de R\&D dont est rattaché le pôle de développement cartographique
 bénéficie d'énormément de liberté dans son management et aucune stratégie de
 management spécifique n'est appliquée.
 
@@ -190,12 +190,12 @@ management spécifique n'est appliquée.
 \section{Le stage}
 \subsection{Présentation du contexte}
 
-Afin de s'adaptater aux services proposés par la concurrence ainsi qu'aux
+Afin de s'adapter aux services proposés par la concurrence ainsi qu'aux
 technologies actuelles, Logitud est repartie de zéro en réécrivant les
-applications qui était alors jusque là des applications clients lourds en
+applications qui était alors jusque-là des applications clients lourds en
 applications web (clients légers). De nombreuses applications des suites
-métiers (gamme population, sécurité, etc\ldots) intéragissent avec des données
-géo-référencées. \textsc{Map Manager} est l'application \gls{sig} permettant
+métiers (gamme population, sécurité, etc\ldots) interagissent avec des données
+géoréférencées. \textsc{Map Manager} est l'application \gls{sig} permettant
 d’administrer ces différentes données. Elle est maintenue par l’équipe en
 charge de l’infrastructure géographique.
 
@@ -212,15 +212,15 @@ est nécessaire d'utiliser un système de position comprenant:
 \begin{description}
   \item[la définition d'un référentiel] dont son but est de fournir aux utilisateurs
     des points stables et matérialisés par des bornes de coordonnées connues. En
-    france, la norme est le référentiel RGF (Réseau Géodésique Français) 93.
+    France, la norme est le référentiel RGF (Réseau Géodésique Français) 93.
     Cependant, la norme internationale est le WGS (World Geodetic System) 84,
-    utilisé par les américains et associé au système GPS\@.
+    utilisé par les Américains et associé au système GPS\@.
     \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Les 1032 sites constituant le
       réseau de base français pour maintenir le RGF93}{Les sites constituant le
       réseau de base français}
 
   \item[le choix d'un système de projections et de coordonnées] dont le but est de
-    projeter l'image de la terre assimilé à un elipsoïde en une surface plane.
+    projeter l'image de la terre assimilé à un ellipsoïde en une surface plane.
     Encore une fois, en France, nous utilisons la projection Lambert 93. Cependant,
     la plupart des cartes numériques mises à dispositions du grand public utilisent
     la projection WGS84 Web Mercator.
@@ -248,23 +248,23 @@ la donnée localisée sur le territoire. Cette donnée peut être:
 
 \subsection{Étude de l'existant}
 L'application \textsc{Map Manager} existe déjà mais ne correspond plus aux
-besoins en terme d'ergonomie et de fonctionnalités. C'est une Single Page Web
+besoins en termes d'ergonomie et de fonctionnalités. C'est une Single Page Web
 Application (SPA – application web à page unique). A mon arrivée, elle avait
-déjà subit trois refontes car plusieurs besoins qui n'avaient pas été exprimés
+déjà subie trois refontes car plusieurs besoins qui n'avaient pas été exprimés
 au début du développement se sont ajoutés au fur et à mesure de l'utilisation
 de l'application. \\
 
-L'application a également sont homonyme en librairie Angular, appelée
+L'application a également son homonyme en librairie Angular, appelée
 \textsc{Map-Viewer}, dont son but est la consultation des données
 cartographiques dans les \gls{applicationsmetier}. Cette librairie, est incluse
 dans la librairie de composants graphiques partagés utilisée par l'entreprise,
 \textsc{WebUI-Core}, afin d'uniformiser et simplifier l'affichage des données
 dans les autres applications. Cette librairie est une librairie Angular avec un
 composant qui permet d'avoir la même carte et interactions que celles
-développées dans \textsc{Map Manager}. Il a également fallut faire une
+développées dans \textsc{Map Manager}. Il a également fallu faire une
 réécriture pour prendre en compte les mêmes besoins que \textsc{Map Manager}
 mais cette fois en gardant la même base car il ne fallait pas produire de
-modification cassantes nécessitant une adaptation du coté des application
+modification cassantes nécessitant une adaptation du côté des application
 l'ayant implémenté.
 
 J’ai réalisé la première semaine un document rendant (cf.
@@ -273,23 +273,23 @@ en suivant l’approche du « Manual Testing », pratique qui consiste à tester
 toutes les fonctionnalités manuellement sur l’interface web afin de tester
 entièrement les fonctionnalités. Ce document m’a permis de définir le point de
 départ et de comprendre le besoin des clients. Il m'a permis de mettre en
-évidance les points qui suivent.
+évidence les points qui suivent.
 
 \subsubsection{Le lien entre les géométries et les objets dans les applications}
-Il y a trois catégories d'objets géo-référencés qui sont consitués des trois
+Il y a trois catégories d'objets géoréférencés qui sont constitués des trois
 différentes géométries présentées précédemment:
 \begin{itemize}
   \item Les \textbf{secteurs} représentés par une géométrie polygonale
-  \item Les \textbf{POI}s (Point of interest – Points d'intérets) représentés par le
+  \item Les \textbf{POI}s (Point of interest – Points d'intérts) représentés par le
         point
   \item Les \textbf{itinéraires} représentés par la géométrie linéaire. \\
 \end{itemize}
 
 Dans le domaine métier géographique, les collègues ont fait le choix
 d'organiser ces géométries dans un ensemble de types. Un type est défini par un
-nom (ex: « Stationnement payant »), une couleur, ainsi qu'un icone. La couleur
+nom (ex: « Stationnement payant »), une couleur, ainsi qu'un icône. La couleur
 peut être surchargée dans l'objet géométrique que contiendra le type tandis que
-l'objet possèdera forcément l'icone du type. Ces types peuvent être rattachés à
+l'objet possèdera forcément l'icône du type. Ces types peuvent être rattachés à
 un ou plusieurs contextes métiers propres à un module d'une application de la
 suite logicielle. Les contextes métiers sont gérés par le service
 \textsc{Labels} qui est commun à toutes les applications, qui permet de
@@ -308,7 +308,7 @@ La première partie est composée de quatre modules
   \item \textsc{GeoToolbox}, le serveur de
         traitement et stockage cartographique est le module principal.
   \item \textsc{Geoserver} est un serveur de données cartographiques open-sources.
-        Il est consommé par le serveur GeoToolbox pour réaliser tout les traitements
+        Il est consommé par le serveur GeoToolbox pour réaliser tous les traitements
         géospatiaux comme le \gls{reverse-geocoding}.
   \item \textsc{Map Printer} est un moteur de rendu cartographique permettant de générer
         des cartes à partir de modèles de mise en page prédéfinis.
@@ -318,10 +318,9 @@ La première partie est composée de quatre modules
 La seconde partie est composée de trois modules: Le serveur \textsc{addresses}
 \gls{proxy} les services de recherche d'adresses. Pour la recherche d'adresses
 en France, nous utilisons un serveur et moteur de recherche \textsc{Addok} avec
-les données de la Base Nationnale d'Adresses fournie par l'État et
-régulièrement mis à jour. Pour les recherches d'adresses en dehors de la
-France, nous consommons un service gratuit basé sur les données open-source
-d'OpenStreetMap.
+les données de la Base Nationale d'Adresses fournie par l'État et régulièrement
+mise à jour. Pour les recherches d'adresses en dehors de la France, nous
+consommons un service gratuit basé sur les données open-source d'OpenStreetMap.
 
 \insererfigure{figures/architecture-SIG.png}{11cm}{Architecture
   \gls{sig}}{Architecture SIG}
@@ -329,21 +328,21 @@ d'OpenStreetMap.
 \subsection{Définition du besoin}
 \textsc{Map Manager} répond au besoin d'administration de secteurs,
 itinéraires et poi. Dans l'ancienne version, les objets ont été séparé en trois
-entitées distinctes affichés sur trois vues différentes. Aujourd'hui, nous
-souhaitons réunir ces trois objets en une seule entitée afin de visualiser les
+entités distinctes affichés sur trois vues différentes. Aujourd'hui, nous
+souhaitons réunir ces trois objets en une seule entité afin de visualiser les
 objets de trois types de géométries sur la même carte.
 \insererfigure{figures/homescreen.png}{4cm}{Choix de la vue selon le type de
   géométrie}{Map-Viewer}
 
 Pour afficher les objets, il est nécessaire de sélectionner un ou plusieurs
 types ou contextes. Des géométries s'affichent et dans l'ancienne version, un
-tableau souvre sur la partie médiane basse de l'écran, listant les géométries
-correspondants aux critères de recherche. Sur de petits écrans, la place est
+tableau s'ouvre sur la partie médiane basse de l'écran, listant les géométries
+correspondantes aux critères de recherche. Sur de petits écrans, la place est
 monopolisée par le menu de recherche et ce tableau:
 \insererfigure{figures/no\_space.png}{6cm}{Place monopolisée par les
   menus}{Manque de place sur l'ancienne version de l'application}
 
-En ce qui concerne ensuite la modification des geométries, on peut soit en
+En ce qui concerne ensuite la modification des géométries, on peut soit en
 ajouter, soit les modifier avec des outils de la carte très basiques. On peut
 également consulter les données qui y sont référencées.
 
@@ -354,7 +353,7 @@ géographiques dans un type métier déjà existant (à nouveau avec la contrain
 de séparation des types de géométrie). J'ai également pu remonter un certain
 nombre de comportements indésirés ou bugs.
 
-Pour intéragir avec les objets géographiques, il faut passer par le serveur
+Pour interagir avec les objets géographiques, il faut passer par le serveur
 GeoToolbox. Il permet de créer les types, les objets géographiques et de les
 modifier par la suite. Le serveur GeoToolbox est développé en parallèle et
 indépendamment de \textsc{Map Manager} par un collègue expert géomaticien.
@@ -374,7 +373,7 @@ Pour permettre à l'application d'unifier les secteurs, les POI et les
 itinéraires en une seule entité, un collègue s'est attelé en parallèle à la
 refactorisation des entités géographiques dans le serveur GeoToolbox.
 
-\subsection{Développement du projet et difficultées rencontrées}
+\subsection{Développement du projet et difficultés rencontrées}
 Dans cette partie, nous allons voir en détail les différentes étapes de
 développements pour la réalisation de la nouvelle version de l'application.
 
@@ -400,7 +399,7 @@ suivante (cf. figure \ref{fig: Proposition de maquette retenue}):
   retenue}{Proposition de maquette retenue}
 
 \subsubsection{Choix des technologies et structure}
-Toutes les applications de l'entreprise sont basées sur le framework Web
+Toutes les applications de l'entreprise sont basées sur le Framework Web
 Angular 9 et \textsc{Map Manager} n'en fait pas exception. Nous ne pouvons pas
 utiliser Angular 13 (dernière version stable à ce jour) car toutes les
 applications et librairies communes, notamment \textsc{WebUI-Core}, sont
@@ -437,10 +436,10 @@ src/app/
 \end{minted}
 
 \subsubsection{Implémentation de la maquette}
-\textsc{Map Manager} intéragis avec de nombreux services de la suite logicielle que nous
+\textsc{Map Manager} interagis avec de nombreux services de la suite logicielle que nous
 découvrirons plus tard. Nous avons décidé de se focaliser de prime abord sur
 l'intégration de la maquette dans l'application Angular. C'est pourquoi tous
-les models de données fournis par les services externes ont été mockés: une
+les modèles de données fournis par les services externes ont été mockés: une
 réponse \og{type} \fg{} avec des données statiques est renvoyé au lieu de
 consommer réellement le service externe.
 
@@ -457,13 +456,13 @@ données mockés:
 \insererfigure{figures/proto_sidebar.png}{6cm}{Barre
   latérale}{Barre latérale}
 
-En premier lieu, j'ai ajouté les \og{cards} \fg{} représentant une entitée de
-la liste de types ou d'objets géographiques:
+En premier lieu, j'ai ajouté les \og{cards} \fg{} représentant une entité de la
+liste de types ou d'objets géographiques:
 \insererfigure{figures/proto_cards.png}{2cm}{Capture d'écran d'une carte d'un
   type et en-dessous celle d'un secteur}{Capture d'écran d'une carte d'un type et
   en-dessous celle d'un secteur}
 
-J'ai pursuivi par l'implémentaton du composant d'affichage des objets
+J'ai poursuivi par l'implémentation du composant d'affichage des objets
 géographiques en utilisant les cards créés précédemment. J'ai également ajouté
 le composant de recherche d'objets géographiques à partir de types et
 contextes: \insererfigure{figures/proto_type-select.png}{1.5cm}{Composant de
@@ -474,10 +473,10 @@ contextes: \insererfigure{figures/proto_type-select.png}{1.5cm}{Composant de
 Je me suis confronté à un problème survenant lors du changement de vue dans la
 sidebar vers le composant d'affichage des objets géographiques. En effet, le
 changement provoque la destruction du composant d'affichage des types. Tous les
-filtres de recherches était donc détruits et réinitialisés lorsqu'on naviguais
-en arrière vers les types. Je me suis retrouvé dans la même problématique
-qu'était facebook il y a quelques années et dont découle l'architecture basée
-sur les flux.
+filtres de recherches étaient donc détruits et réinitialisés lorsqu'on
+naviguais en arrière vers les types. Je me suis retrouvé dans la même
+problématique qu'était les développeurs du réseau social FaceBook il y a
+quelques années et dont découle l'architecture basée sur les flux.
 
 \insererfigure{figures/flux_architecture.png}{4cm}{Architecture basée sur les
   flux}{Architecture basée sur les flux}
@@ -498,12 +497,12 @@ composant parent pour conserver l'état des filtres car c'était la solution la
 plus simple et rapide à implémenter.\\
 
 \paragraph{Implémentation des actions et de la donnée}\mbox{}\\
-J'ai ensuite implémenté le composant metadata qui est la colone vertébrale de
-l'application. C'est lui qui est en charge de la récupération et du
-traitement des données pour ainsi la distribuer aux différents composants. Il
-fait le lien entre les recherches qui consomment les services externes, les
-filtres sur les résultats et l'affichage sur la carte. C'est également dans ce
-composant que l'implémentation du filtre \og{highlight} \fg{} qui permet de mettre en
+J'ai ensuite implémenté le composant metadata qui est la colonne vertébrale de
+l'application. C'est lui qui a la charge de récupérer et traiter les données
+pour ensuite les distribuer aux différents composants. Il fait le lien entre
+les recherches qui consomment les services externes, les filtres sur les
+résultats et l'affichage sur la carte. C'est également dans ce composant que
+l'implémentation du filtre \og{highlight} \fg{} qui permet de mettre en
 surbrillance un élément sur la carte est réalisé. Il a été laborieux à mettre
 en place car il y a trois états de surbrillance à gérer qui sont liés entre eux
 comme suit:
@@ -519,9 +518,9 @@ comme suit:
 \paragraph{Implémentation des services externes}\mbox{}\\
 Une fois l'implémentation des vues et des filtres terminés, je suis passé à
 l'implémentation des services Angular afin de remplacer les mocks de données
-par la consomation de services externes. L'entreprise fait systématiquement un
+par la consommation de services externes. L'entreprise fait systématiquement un
 \gls{wrapper} pour chaque service afin d'abstraire la couche HTTP\@. Le wrapper
-fourni des méthodes qui renvoient la donnée correspondante aux filtres. J'ai
+fournie des méthodes qui renvoient la donnée correspondante aux filtres. J'ai
 débuté par l'implémentation des méthodes du \gls{wrapper} \gls{sig} permettant
 de requêter sur le serveur cartographique afin de récupérer la liste de types
 et d'effectuer la recherche d'objets contenus dans ces types. \\
@@ -539,8 +538,8 @@ carte les affiche si les conditions d'affichage sont réunies.
 
 Pour afficher une source de données sur la carte dans le format GeoJSON utilisé
 par \textsc{GeoToolbox}, il suffit de les lire avec le \og{Reader} \fg{} de ce
-dernier qui est fournit par la librairie Openlayers. La librairie les ajouter à
-une couche vectorielle qui elle même est ajoutée à l'instance de la carte. Nous
+dernier qui est fourni par la librairie Openlayers. La librairie les ajouter à
+une couche vectorielle qui elle-même est ajoutée à l'instance de la carte. Nous
 avons décidé d'implémenter le pattern \textit{Adapter} avec un service jouant
 le rôle d'adapteur et contenant l'implémentation des méthodes de la librairie
 OpenLayers afin de simplifier le changement de librairie cartographique si
@@ -549,29 +548,29 @@ cette dernière ne répond plus à nos besoins.
 Maintenant que les objets sont ajoutés à la carte, il faut définir leur style.
 Les metadonnées des objets géographiques, comme évoqué lors de la présentation
 de la géomatique, contiennent des données sémiologiques, définissant en
-l'occurence la couleur et le pictogramme de l'objet. Le serveur encode la
+l'occurrence la couleur et le pictogramme de l'objet. Le serveur encode la
 couleur en hexadécimal qui est supporté nativement par la librairie. En
-revenche, le pictogramme provient des différentes librairies
+revanche, le pictogramme provient des différentes librairies
 \textsc{FontAwesome}, \textsc{ClarityIcons} ou le service \textsc{Labels} avec
-des icones personnalisés par le client. La librairie OpenLayers contraint à
-l'utilisation d'icones encodés en base64:
-\textit{data:image/svg+xml;base64,\ldots}. Dans le cas des icones du service
-labels, c'est simple, on le récupère dans le bon format. En revenche, dans le
-cas des deux librairies d'icones, on récupère uniquement son nom. Il a donc
+des icônes personnalisés par le client. La librairie OpenLayers contraint à
+l'utilisation d'icônes encodés en base64:
+\textit{data:image/svg+xml;base64,\ldots}. Dans le cas des icônes du service
+labels, c'est simple, on le récupère dans le bon format. En revanche, dans le
+cas des deux librairies d'icônes, on récupère uniquement son nom. Il a donc
 fallu dans un premier temps le récupérer au format SVG à partir de son nom, sur
 certains réaliser des traitements, puis le convertir dans le format attendu.
-J'ai réalisé de nombreux essais pour récupérer l'icone de la librairie
+J'ai réalisé de nombreux essais pour récupérer l'icône de la librairie
 \textsc{ClarityIcons}, car en effet, c'est assez facile de récupérer le code
-SVG de l'icone, mais il faut le traiter par la suite:
+SVG de l'icône, mais il faut le traiter par la suite:
 \insererfigure{figures/clr_convert.png}{1cm}{Icon \og{Clock} \fg{} de Clarity
-  non traité vers l'icone traité}{Traitement de l'icone Clarity}
+  non traité vers l'icône traité}{Traitement de l'icône Clarity}
 
 Le SVG, est un format d'image basé sur le XML\@. Cela signifie que l'on peut le
-manipuler afin de supprimer les noeuds XML contenant les géométries normalement
+manipuler afin de supprimer les nœuds XML contenant les géométries normalement
 cachées par le style du document (CSS) qui n'est pas pris en compte par les
-canvas utilisés par OpenLayers pour aficher la carte ainsi que les icones. Pour
-le reste, j'ai pu me servir du code de la version précédante afin d'afficher
-les objets sur la carte.
+canvas utilisés par OpenLayers pour afficher la carte ainsi que les icônes.
+Pour le reste, j'ai pu me servir du code de la version précédente afin
+d'afficher les objets sur la carte.
 
 Aussi important que de pouvoir afficher les objets sur la carte, il faut
 pouvoir les créer en les dessinant et plus généralement, exécuter des actions à
@@ -579,20 +578,20 @@ partir de la carte. C'est ce sur quoi j'ai ensuite travaillé. J'ai implémenté
 les \og{controls OpenLayers} \fg{} permettant de réaliser des d'actions sur la
 carte et en dehors tels que le sélecteur de fonds cartographiques, les
 différents outils de dessin et de modification, le bouton pour ouvrir la barre
-latérale ainsi que les intéractions de la carte (zoom, rotation, recentrage sur
+latérale ainsi que les interactions de la carte (zoom, rotation, recentrage sur
 le contour de la ville).
 
 L'enregistrement des dessins a été particulièrement ardu. Un des besoins est la
-possibilité de déssiner plusieurs géométries dans un seul objet géographique.
-Le GeoJSON le permet avec un objet poly-géométrique, cependant OpenLayers
-produit des objets à géométrie unique. Il a fallut implémenter des méthodes de
-conversions de types de géométries de Point$\,\to\,$MultiPoint,
+possibilité de dessiner plusieurs géométries dans un seul objet géographique.
+Le \textit{GeoJSON} le permet avec un objet poly-géométrique, cependant
+OpenLayers produit des objets à géométrie unique. Il a fallu implémenter des
+méthodes de conversions de types de géométries de Point$\,\to\,$MultiPoint,
 LineString$\,\to\,$MultiLineString, Polygon$\,\to\,$MultiPolygon.
 
 Je me suis intéressé ensuite à une demande d'évolution. L'application doit
 permettre la modification de géométries avec différents outils comme la mise à
 l'échelle, la rotation, le déplacement de coordonnées ou encore la suppression
-d'objet. J'ai fait cela à partir d'intéractions déjà existantes dans une
+d'objet. J'ai fait cela à partir d'interactions déjà existantes dans une
 extension de la librairie: \textsc{ol-ext}. Cette évolution doit permettre
 également de modifier plusieurs objets à la fois et de types différents.
 
@@ -615,12 +614,13 @@ s'assurer que le fichier pourra ensuite être traité (taille, format). J'ai
 ensuite créé un composant pour sélectionner la projection de la donnée. La
 correspondance des données attributaires et les géométries sont gérés par le
 composant d'import qui va sérialiser les données afin de les afficher sur la
-carte. OpenLayers met à disposition des développeurs des serialiseurs pour les
-formats GeoJSON et KML\@. Pour supporter l'import du format Shapefile qui est
-un standard de nombreux logiciels \gls{sig}, il a fallu passer par une
-librairie externe permettant de convertir auparavent les données en GeoJSON\@.
+carte. OpenLayers met à disposition des développeurs des sérialiseurs pour les
+formats \textit{GeoJSON} et \textit{KML}. Pour supporter l'import du format
+Shapefile qui est un standard de nombreux logiciels \gls{sig}, il a fallu
+passer par une librairie externe permettant de convertir auparavant les données
+en \textit{GeoJSON}.
 
-Enusite, il faut traiter les métadonnées associés. Pour ça, un formulaire
+Ensuite, il faut traiter les métadonnées associées. Pour ça, un formulaire
 permet de définir la correspondance entre les métadonnées des objets importés
 et les métadonnées de notre système:
 \insererfigure{figures/screen_mm_import.png}{7cm}{Vue de l'import
@@ -628,7 +628,7 @@ et les métadonnées de notre système:
 
 En ce qui concerne l'interface utilisateur, la plus grande partie avait déjà
 été codé dans l'ancienne version de l'application. Il a été nécessaire de
-séparer l'enregistrement en fonction de la déstination de l'import: dans de
+séparer l'enregistrement en fonction de la destination de l'import: dans de
 nouveaux objets à ajouter à un type existant ou bien fusionner un objet
 existant. \\
 
@@ -662,7 +662,7 @@ demande d'évolution dans le serveur cartographique GeoToolbox pour le nouveau
 backend GeoToolbox qui unifie maintenant les objets de types de géométries
 différents en une seule entité afin de pouvoir les récupérer à partir d'un seul
 end-point. L'ancienne version n'était plus fonctionnelle et à ce moment, toutes
-les anciennes fonctionnalités avait été implémentées dans la nouvelle version
+les anciennes fonctionnalités avaient été implémentées dans la nouvelle version
 de l'application.
 
 Le processus de déploiement est géré par l'équipe en charge de
@@ -670,33 +670,33 @@ l'infrastructure. Pour déployer l'application en production, il faut ouvrir une
 demande sur le site du support Logitud.
 
 \subsection{Améliorations et perspectives}
-Bien que l'application contienne plus de fonctionnalités que la précédante,
+Bien que l'application contienne plus de fonctionnalités que la précédente,
 plusieurs évolutions sont encore à implémenter et d'autres envisagées.
 
 Sur la partie cartographie, nous souhaitons plus tard permettre à l'utilisateur
-de personnaliser son interface en lui permettant de savegarder des préférences
+de personnaliser son interface en lui permettant de sauvegarder des préférences
 d'affichage. Nous aimerions également permettre au client de configurer son
 propre flux cartographique pour les fonds cartographiques.
 
 De nouvelles fonctionnalités sont également planifiées dans la prochaine
 version. L'utilisation d'un serveur de moteur de rendu cartographique
-permettant de générer la carte affiché dans un fichier à partir d'un template
-défini est actuellement en cours d'implémentation dans la librairie map-viewer
-et sera également implémentée dans \textsc{Map Manager}.
+permettant de générer la carte affiché dans un fichier à partir d'un modèle
+défini est actuellement en cours d'implémentation dans la librairie
+textsc{Map-Viewer} et sera également implémentée dans \textsc{Map Manager}.
 
-De plus, également de nouvelles évolutions pas encore programmées ont été
-entrevues. Il serait intéressant d'implémenter le visualiseur d'image
+De plus, de nouvelles évolutions sont imaginées mais pas encore programmées. Il
+serait intéressant d'implémenter le visualiseur d'image
 \href{https://www.mapillary.com/app/}{Mapillary}. Il permet de visualiser la
 rue sur des photos partagées par des contributeurs. Nous voudrions visualiser
 et dessiner des objets géographiques sur la photo.
 
 \section{Conclusion}
 À mon arrivée dans le service, mon collègue m’a confié de diverses tâches dans
-les différents miniservices cartographiques, me permettant ainsi de découvrir
+les différents mini-services cartographiques, me permettant ainsi de découvrir
 leurs différentes fonctionnalités. L'absence de documentation m'a permis de
 m’extravertir et d’échanger avec mes collègues. Elle m’a également permis
 d’apprendre l’origine des choix et décisions techniques réalisés, d’enrichir mes
-connaissance sur le domaine métier et le besoin des clients. J’ai également eu
+connaissances sur le domaine métier et le besoin des clients. J’ai également eu
 l’occasion d’amener l’utilisation de certaines bonnes pratiques permettant de gagner
 du temps et d’augmenter la maintenabilité dans d'autres projets.
 Le projet \textsc{Map Manager} dont j'ai eu la tâche de refonte et d'ajout de nouvelles
@@ -721,11 +721,11 @@ l'environnement de production de l'entreprise.
 \addcontentsline{toc}{section}{Résumé}
 
 Logitud est une entreprise éditant des logiciels répondant aux besoins des
-métiers des collectivités. Une évolution des besoins de l'application web de
-\gls{sig} à nécéssité la réécriture complèteﬂ de l'application. Afin de
+métiers des collectivités locales. Une évolution des besoins de l'application
+web de \gls{sig} à nécessité la réécriture complète de l'application. Afin de
 s'assurer de répondre aux nouveaux besoins ainsi que de s'assurer de ne pas
 perdre de fonctionnalités déjà existantes, un travail de documentation de
-l'éxistant et de prototypage a été nécessaire avant le développement. Le
+l'existant et de prototypage a été nécessaire avant le développement. Le
 développement s'est terminé par le déploiement de la nouvelle version sur
 l'environnement de production pour la totalité les clients de cette suite
 logiciel et aucun retour négatif n'est pour l'instant connu.
