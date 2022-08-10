@@ -5,7 +5,6 @@ paginate: true
 backgroundColor: #fff
 backgroundImage: url(images/hero-background.svg)
 marp: true
-footer: '[🏠](#1, "Retour  à l&apos;accueil")'
 ---
 
 <style>
@@ -13,7 +12,13 @@ img[alt~="center"] {
   display: block;
   margin: 0 auto;
 }
+footer {
+  text-align: center;
+  margin-right: 40px
+}
 </style>
+
+<!-- _footer: 'RULLO Robin - Logitud Solutions - 2022' -->
 
 ![bg left cover](images/map-manager/map-manager.png)
 
@@ -27,13 +32,13 @@ Refactorisation d'une application SIG.
 
 1. [Introduction](#3)
 1. [Présentation de Logitud](#4)
-1. [La Géomatique](#3)
-1. [Stage](#4)
-   1. [Documentation de l'existant et prototypage](#5)
-   1. [Développements réalisés](#6)
-   1. [Évolutions et perspectives](#7)
-1. [Démonstration](#8)
-1. [Conclusion](#9)
+1. [La Géomatique](#8)
+1. [Stage](#11)
+   1. [Documentation de l'existant et prototypage](#13)
+   1. [Intégration de la maquette](#13)
+   1. [Évolutions et perspectives](#25)
+1. [Démonstration](https://applications-dev.logitud.fr/logitud-test/map-manager/)
+1. [Conclusion](#26)
 
 ---
 
@@ -58,6 +63,8 @@ Pourquoi ce stage:
 # Logitud Solutions
 
 <!-- Le siège social de Logitud est basé au Parc des Collines de Mulhouse. La société compte deux autres agences où sont employés des formateurs et des commerciaux. L'activité a lieu principalement à l'agence de Mulhouse. -->
+
+<!-- _class: lead -->
 
 ![bg contain right:67%](images/logitud/logitud_locations.png)
 
@@ -118,11 +125,18 @@ Lambert Conique Conforme                  World Geodetic Syste
 
 ## Géométries
 
+<!-- En géomatique, on distingue 3 types de géométries:
+- Le point
+- La ligne
+- Le polygone
+Il est possible de créer des multi-géométrie, une géométrie qui contient une collection de géométries du même type.
+ -->
+
 - Point
-<br/>
+  <br/>
 - Ligne (LineString)
-<br/>
-<br/>
+  <br/>
+  <br/>
 - Polygone (Polygon)
 
 ![bg right contain](./images/geomatic/geoms.png)
@@ -139,6 +153,11 @@ Refactorisation de l'application SIG
 
 ## Architecture SIG
 
+<!-- L'architecture SIG est composée de plusieurs mini-services divisé en deux thématiques. La partie entourée en orange est celle où je suis intervenu. GeoToolBox est le serveur de traitement et stockage des données géographiques.
+GeoServeur est un serveur de partage de données cartographique. Il est consommé par GeoToolbox pour les requêtes géospatiales. Il distribue également les flux cartographiques.
+MapPrint serveur est un moteur de rendu cartographique permettant de générer une carte à partir de modèles de mise en page prédéfinies.
+La deuxième thématique identifiée est la recherche d'adresses dont je ne rentrerais pas dans le détail. -->
+
 ![w:700 center](./images/map-manager/architecture-SIG.png)
 
 ---
@@ -147,6 +166,13 @@ Refactorisation de l'application SIG
 
 ![bg h:350](./images/map-manager/old_homescreen.png)
 ![bg h:350](./images/map-manager/old_no_space.png)
+
+---
+
+### Documentation
+
+Manual Testing
+Document produit
 
 ---
 
@@ -159,6 +185,9 @@ Refactorisation de l'application SIG
 
 ## Intégration de la maquette
 
+![bg w:500](./images/maquette/maquette_retained_proposition.png)
+![bg w:530](./images/map-manager/map-manager-wide.png)
+
 ---
 
 ### Interaction avec les services externes
@@ -168,7 +197,9 @@ Refactorisation de l'application SIG
 ---
 
 ### Intéractions avec la carte
+
 Pattern adapter:
+
 <!--
 @startuml
 
@@ -194,6 +225,96 @@ MapService -> OpenLayerImpl
 -->
 
 ![bg w:1000](images/map-manager/adapter.svg)
+
+---
+
+#### Sémiologie
+
+![bg w:50%](images/map-manager/color_picker.png)
+![bg w:45%](images/map-manager/plus-line.svg)
+![bg w:30%](images/map-manager/map-marker.png)
+![bg w:50%](images/map-manager/arrow--right.svg)
+![bg w:40%](images/map-manager/poi_marker.png)
+
+---
+
+#### Récupération de l'icône
+
+<!-- Chaque librairie implémente une méthode permettant de récupérer la définition de l'icone. Le service Labels retourne directement l'image encodé en base 64 -->
+
+`IconLibrary.getIcon(iconName: string): SVGIcon`
+
+- Labels 😀 :
+
+```text
+data:image/{...};base64,{...}
+```
+
+- Fontawesome 😐 :
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg"><path >{...}</path></svg>
+```
+
+---
+
+- Clarity ☹️ :
+  ![center w:300](images/map-manager/clr_convert.png)
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" class="can-badge can-alert has-solid ">
+  <path d="{...}" class="clr-i-outline clr-i-outline-path-1"></path>
+  <path d="{...}" class="clr-i-outline clr-i-outline-path-2"></path>
+  <path d="{...}" class="clr-i-outline clr-i-outline-path-3"></path>
+
+  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-1--badged"></path>
+  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-2--badged"></path>
+  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-3--badged"></path>
+  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-1--alerted"></path>
+  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-2--alerted"></path>
+  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-3--alerted"></path>
+  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-4--alerted clr-i-alert"></path>
+  <path d="{...}" class="clr-i-solid clr-i-solid-path-1"></path>
+  <path d="{...}" class="clr-i-solid--badged clr-i-solid-path-1--badged"></path>
+  <path d="{...}" class="clr-i-solid--alerted clr-i-solid-path-1--alerted"></path>
+  <path d="{...}" class="clr-i-solid--alerted clr-i-solid-path-1--alerted clr-i-alert"></path>
+</svg>
+```
+
+---
+
+```ts
+const CSS_BLACKLIST = [
+  "clr-i-solid",
+  "clr-i-badge",
+  "clr-i-alert",
+  "clr-i-solid--alerted",
+  "clr-i-solid--badged",
+];
+
+const removeBlacklistedNodes = (nodeElements) => {
+  nodeElements.forEach((node: Node) => {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      // Recursively filter nodes
+      if (node.childNodes?.length > 0) {
+        removeBlacklistedNodes(node.childNodes);
+      }
+
+      // Element classes
+      const cssClasses =
+        (node as Element).getAttribute("class")?.split(" ") ?? [];
+
+      // Remove blacklisted node
+      if (CSS_BLACKLIST.filter((bl) => cssClasses.includes(bl)).length > 0) {
+        node.parentNode.removeChild(node);
+      }
+    }
+  });
+};
+
+// Remove blacklisted nodes
+removeBlacklistedNodes(svgElement.childNodes);
+```
 
 ---
 
@@ -243,13 +364,14 @@ MapService -> OpenLayerImpl
 
 # Conclusion
 
-- [x] Répond aux besoins
-- [x] Ergonomique et fonctionnel
-- [x] Rapidité de développement
+✅ Répond aux besoins
+✅ Ergonomique et fonctionnel
+✅ Rapidité de développement
 
 ⮕ Problématique résolue
 
 ---
 
 <!-- _class: lead -->
+
 # Questions
