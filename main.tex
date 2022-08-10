@@ -215,7 +215,7 @@ est nécessaire d'utiliser un système de position comprenant:
     France, la norme est le référentiel RGF (Réseau Géodésique Français) 93.
     Cependant, la norme internationale est le WGS (World Geodetic System) 84,
     utilisé par les Américains et associé au système GPS\@.
-    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Les 1032 sites constituant le
+    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Sites constituant le
       réseau de base français pour maintenir le RGF93}{Les sites constituant le
       réseau de base français}
 
@@ -227,7 +227,7 @@ est nécessaire d'utiliser un système de position comprenant:
 \end{description}
 
 \insererfigure{figures/lambertCC_mercator84_merged.png}{3cm}{
-  Projection Lambert conique conforme à gauche, Mercator à droite\\
+  Projection Lambert conique conforme / Projection Mercator\\
   \copyright{} Tobias Jung
 }{Exemple de projections}
 
@@ -307,8 +307,8 @@ La première partie est composée de quatre modules
 \begin{itemize}
   \item \textsc{GeoToolbox}, le serveur de
         traitement et stockage cartographique est le module principal.
-  \item \textsc{Geoserver} est un serveur de données cartographiques open-sources.
-        Il est consommé par le serveur GeoToolbox pour réaliser tous les traitements
+  \item \textsc{Geoserver} est un serveur open-source de partage de données cartographiques.
+        Il est consommé par le serveur GeoToolbox pour réaliser les traitements
         géospatiaux comme le \gls{reverse-geocoding}.
   \item \textsc{Map Printer} est un moteur de rendu cartographique permettant de générer
         des cartes à partir de modèles de mise en page prédéfinis.
@@ -416,6 +416,7 @@ que suffisante pour répondre à nos besoins actuels.
 Nous avons décidé pour la réécriture, d'initialiser un nouveau projet Angular
 et de tout réimplémenter en suivant l'architecture que nous avions défini afin
 de rendre l'application maintenable:
+\newpage
 \begin{minted}[autogobble, frame = single]{text}
 src/app/
 +-- config
@@ -466,9 +467,9 @@ J'ai poursuivi par l'implémentation du composant d'affichage des objets
 géographiques en utilisant les cards créés précédemment. J'ai également ajouté
 le composant de recherche d'objets géographiques à partir de types et
 contextes: \insererfigure{figures/proto_type-select.png}{1.5cm}{Composant de
-  recherche de types à gauche et composant de visualisation du contenu du type à
-  droite}{Capture d'écran Composant de recherche de types à gauche et composant
-  de visualisation du contenu du type à droite}
+  recherche de types / Composant de visualisation du contenu du Type}{Capture
+  d'écran Composant de recherche de types à gauche et composant de visualisation
+  du contenu du type à droite}
 
 Je me suis confronté à un problème survenant lors du changement de vue dans la
 sidebar vers le composant d'affichage des objets géographiques. En effet, le
