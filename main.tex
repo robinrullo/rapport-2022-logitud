@@ -40,7 +40,7 @@
 \newglossaryentry{appshell}
 {
   name=App Shell,
-  description={Squelette de l'application}
+  description={Squelette de l'application. Voir figure~\ref{fig: App Shell}}
 }
 \newglossaryentry{wrapper}
 {
@@ -213,18 +213,19 @@ est nécessaire d'utiliser un système de position comprenant:
 \begin{description}
   \item[la définition d'un référentiel] dont son but est de fournir aux utilisateurs
     des points stables et matérialisés par des bornes de coordonnées connues. En
-    France, la norme est le référentiel RGF (Réseau Géodésique Français) 93.
-    Cependant, la norme internationale est le WGS (World Geodetic System) 84,
-    utilisé par les Américains et associé au système GPS\@.
-    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Sites constituant le réseau de
-      base français pour maintenir le RGF93}{Les sites constituant le réseau de base
-      français}
+    France, la norme est le référentiel RGF 93 (Réseau Géodésique Français 93,
+    figure~\ref{fig: Les sites constituant le réseau de base français}). Cependant,
+    la norme internationale est le WGS (World Geodetic System) 84, utilisé par les
+    Américains et associé au système GPS\@.
+    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Les 1032 sites constituant le
+      réseau de base français pour maintenir le RGF93}{Les sites constituant le
+      réseau de base français}
 
   \item[le choix d'un système de projections et de coordonnées] dont le but est de
     projeter l'image de la terre assimilé à un ellipsoïde en une surface plane.
     Encore une fois, en France, nous utilisons la projection Lambert 93. Cependant,
     la plupart des cartes numériques mises à dispositions du grand public utilisent
-    la projection WGS84 Web Mercator.
+    la projection WGS84 Web Mercator (figure~\ref{fig: Exemple de projections}).
 \end{description}
 
 \insererfigure{figures/lambertCC_mercator84_merged.png}{3cm}{
@@ -268,7 +269,7 @@ mais cette fois en gardant la même base car il ne fallait pas produire de
 modification cassantes nécessitant une adaptation du côté des application
 l'ayant implémenté.
 
-J’ai réalisé la première semaine un document rendant (cf.
+J’ai réalisé la première semaine un document rendant (cf.\
 \hyperlink{ANNEX2}{annexe 2}) compte de l’état des fonctionnalités développées
 en suivant l’approche du « Manual Testing », pratique qui consiste à tester
 toutes les fonctionnalités manuellement sur l’interface web afin de tester
@@ -299,7 +300,7 @@ mettant à disposition des listes personnalisées.
 
 \subsubsection{État de l'art}
 Toute l'infrastructure SIG de l'entreprise est déjà en place et fonctionnelle.
-Elle est composée de plusieurs mini-services divisé en deux thématiques, cf.
+Elle est composée de plusieurs mini-services divisé en deux thématiques, cf.\
 figure~\ref{fig: Architecture SIG}. La première partie entourée en orange est
 l'administration des objets géographiques. C'est également celle sur laquelle
 j'ai travaillé. La deuxième est la recherche d'adresses.
@@ -327,19 +328,20 @@ consommons un service gratuit basé sur les données open-source d'OpenStreetMap
   \gls{sig}}{Architecture SIG}
 
 \subsection{Définition du besoin}
-\textsc{Map Manager} répond au besoin d'administration de secteurs,
-itinéraires et poi. Dans l'ancienne version, les objets ont été séparé en trois
-entités distinctes affichés sur trois vues différentes. Aujourd'hui, nous
-souhaitons réunir ces trois objets en une seule entité afin de visualiser les
-objets de trois types de géométries sur la même carte.
-\insererfigure{figures/homescreen.png}{4cm}{Choix de la vue selon le type de
-  géométrie}{Map-Viewer}
+\textsc{Map Manager} répond au besoin d'administration de secteurs, itinéraires
+et poi. Dans l'ancienne version, les objets ont été séparé en trois entités
+distinctes affichés sur trois vues différentes, cf.\ figure~\ref{fig:
+  Map-Viewer}. Aujourd'hui, nous souhaitons réunir ces trois objets en une seule
+entité afin de visualiser les objets de trois types de géométries sur la même
+carte. \insererfigure{figures/homescreen.png}{4cm}{Choix de la vue selon le
+  type de géométrie}{Map-Viewer}
 
 Pour afficher les objets, il est nécessaire de sélectionner un ou plusieurs
 types ou contextes. Des géométries s'affichent et dans l'ancienne version, un
 tableau s'ouvre sur la partie médiane basse de l'écran, listant les géométries
 correspondantes aux critères de recherche. Sur de petits écrans, la place est
-monopolisée par le menu de recherche et ce tableau:
+monopolisée par le menu de recherche et un tableau (figure~\ref{fig: Manque de
+  place sur l'ancienne version de l'application}).
 \insererfigure{figures/no\_space.png}{6cm}{Place monopolisée par les
   menus}{Manque de place sur l'ancienne version de l'application}
 
@@ -382,7 +384,7 @@ développements pour la réalisation de la nouvelle version de l'application.
 J'ai débuté la refonte par la réalisation d'une maquette pour l'interface
 utilisateur sur un logiciel de prototypage, \textbf{Adobe XD}. Mon collègue m'a
 suggéré de m'inspirer du site \href{https://www.mapillary.com/app/}{Mapillary},
-cf. figure~\ref{fig: Mapillary}.
+cf.\ figure~\ref{fig: Mapillary}.
 \insererfigure{figures/screen_mapillary.png}{6cm}{\href{https://www.mapillary.com/app/}{Mapillary}}{Mapillary}
 
 Cependant, le design de la maquette ne correspondait pas à celui des autres
@@ -395,7 +397,7 @@ Nous avons ensuite organisé une réunion avec le référent UI/UX, le responsab
 du service R\&D, le responsable des développements et également un responsable
 de projet de la hotline Logitud afin de valider l'implémentation du besoin
 métier ainsi que l'ergonomie à l'utilisation. Nous avons retenu la proposition
-suivante (cf. figure \ref{fig: Proposition de maquette retenue}):
+suivante (cf.\ figure~\ref{fig: Proposition de maquette retenue}):
 \insererfigure{figures/maquette\_retained\_proposition.png}{6cm}{Proposition
   retenue}{Proposition de maquette retenue}
 
@@ -439,28 +441,29 @@ src/app/
 \end{minted}
 
 \subsubsection{Implémentation de la maquette}
-\textsc{Map Manager} interagis avec de nombreux services de la suite logicielle que nous
-découvrirons plus tard. Nous avons décidé de se focaliser de prime abord sur
-l'intégration de la maquette dans l'application Angular. C'est pourquoi tous
-les modèles de données fournis par les services externes ont été mockés: une
-réponse \og{type} \fg{} avec des données statiques est renvoyé au lieu de
-consommer réellement le service externe.
+\textsc{Map Manager} interagis avec de nombreux services de la suite logicielle
+que nous découvrirons plus tard. Nous avons décidé de se focaliser de prime
+abord sur l'intégration de la maquette dans l'application Angular. C'est
+pourquoi tous les modèles de données fournis par les services externes ont été
+mockés: une réponse \og{type} \fg{} avec des données statiques est renvoyé au
+lieu de consommer réellement le service externe.
 
 \paragraph{Création des composants de la maquette}\mbox{}\\
 L'application étant la seule carto-centré dans la suite d'applications, aucun
 composant n'est intégré à la librairie \textsc{WebUI-core} excepté
-l'\gls{appshell}.
+l'\gls{appshell} (figure~\ref{fig: App Shell}).
 \insererfigure{figures/proto_app-shell.png}{4cm}{\Gls{appshell}}{App Shell}
 
 \newpage
 J'ai donc débuté par l'ajout des composant de la barre latérale avec des
-données mockés:
+données mockés, voir figure~\ref{fig: Barre latérale}.
 
 \insererfigure{figures/proto_sidebar.png}{6cm}{Barre
   latérale}{Barre latérale}
 
 En premier lieu, j'ai ajouté les \og{cards} \fg{} représentant une entité de la
-liste de types ou d'objets géographiques:
+liste de types ou d'objets géographiques, voir figure~\ref{fig: Capture d'écran
+  d'une carte d'un type et en-dessous celle d'un secteur}.
 \insererfigure{figures/proto_cards.png}{2cm}{Capture d'écran d'une carte d'un
   type et en-dessous celle d'un secteur}{Capture d'écran d'une carte d'un type et
   en-dessous celle d'un secteur}
@@ -468,10 +471,9 @@ liste de types ou d'objets géographiques:
 J'ai poursuivi par l'implémentation du composant d'affichage des objets
 géographiques en utilisant les cards créés précédemment. J'ai également ajouté
 le composant de recherche d'objets géographiques à partir de types et
-contextes: \insererfigure{figures/proto_type-select.png}{1.5cm}{Composant de
-  recherche de types / Composant de visualisation du contenu du Type}{Capture
-  d'écran Composant de recherche de types à gauche et composant de visualisation
-  du contenu du type à droite}
+contextes, voir figure~\ref{fig: Composant de recherche de types et contextes}.
+\insererfigure{figures/proto_type-select.png}{1.5cm}{Composant de recherche de
+  types / contextes}{Composant de recherche de types et contextes}
 
 Je me suis confronté à un problème survenant lors du changement de vue dans la
 sidebar vers le composant d'affichage des objets géographiques. En effet, le
@@ -479,7 +481,8 @@ changement provoque la destruction du composant d'affichage des types. Tous les
 filtres de recherches étaient donc détruits et réinitialisés lorsqu'on
 naviguais en arrière vers les types. Je me suis retrouvé dans la même
 problématique qu'était les développeurs du réseau social FaceBook il y a
-quelques années et dont découle l'architecture basée sur les flux.
+quelques années et dont découle l'architecture basée sur les flux
+(figure~\ref{fig: Architecture basée sur les flux}).
 
 \insererfigure{figures/flux_architecture.png}{4cm}{Architecture basée sur les
   flux}{Architecture basée sur les flux}
@@ -529,12 +532,12 @@ de requêter sur le serveur cartographique afin de récupérer la liste de types
 et d'effectuer la recherche d'objets contenus dans ces types. \\
 
 \paragraph{Implémentation de la carte}\mbox{}\\
-Maintenant que les objets sont récupérés, il faut les afficher sur la carte.
+Passons à l'affichage des objets sur la carte, cf.\ figure~\ref{fig: Map Manager}.
 
 \insererfigure{figures/screen_map-manager.png}{7cm}{Map Manager}{Map Manager}
 
 L'application consomme le serveur GeoToolbox qui lui retourne des collections
-d'objets au format GeoJSON, cf. \hyperlink{ANNEX1}{annexe 1}. J'ai utilisé le
+d'objets au format GeoJSON, cf.\ \hyperlink{ANNEX1}{annexe 1}. J'ai utilisé le
 pattern \textit{subject/subscriber} implémenté par d'Angular. Le composant
 metadata publie les objets récupérés par le wrapper puis le composant de la
 carte les affiche si les conditions d'affichage sont réunies.
@@ -564,7 +567,8 @@ fallu dans un premier temps le récupérer au format SVG à partir de son nom, s
 certains réaliser des traitements, puis le convertir dans le format attendu.
 J'ai réalisé de nombreux essais pour récupérer l'icône de la librairie
 \textsc{ClarityIcons}, car en effet, c'est assez facile de récupérer le code
-SVG de l'icône, mais il faut le traiter par la suite:
+SVG de l'icône, mais il faut le traiter par la suite, figure~\ref{fig:
+  Traitement de l'icône Clarity}:
 \insererfigure{figures/clr_convert.png}{1cm}{Icon \og{Clock} \fg{} de Clarity
   non traité vers l'icône traité}{Traitement de l'icône Clarity}
 
@@ -625,8 +629,9 @@ en \textit{GeoJSON}.
 
 Ensuite, il faut traiter les métadonnées associées. Pour ça, un formulaire
 permet de définir la correspondance entre les métadonnées des objets importés
-et les métadonnées de notre système:
-\insererfigure{figures/screen_mm_import.png}{7cm}{Vue de l'import
+et les métadonnées de notre système, figure~\ref{fig: Import d'objets
+  géographiques dans l'application}.
+\insererfigure{figures/screen_mm_import.png}{7.5cm}{Vue de l'import
   d'objets}{Import d'objets géographiques dans l'application}
 
 En ce qui concerne l'interface utilisateur, la plus grande partie avait déjà
@@ -637,7 +642,7 @@ existant. \\
 
 \paragraph{Documentation de l'application}\mbox{}\\
 La dernière étape avant de créer la version a été la génération du changelog
-(cf. \hyperlink{ANNEX3}{annexe 3}), la documentation des changements du projets
+(cf.\ \hyperlink{ANNEX3}{annexe 3}), la documentation des changements du projets
 entre les différentes versions. J'ai depuis le début de la réécriture de
 l'application, fait le choix de suivre la convention de commit d'Angular connu
 pour rendre l'historique de versionnement explicite. Par exemple avec l'ajout d'une
