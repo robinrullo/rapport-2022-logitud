@@ -157,8 +157,8 @@ lieu, puis une présentation du stage. En fin, une conclusion boucle le rapport.
 Logitud Solutions est une société par actions simplifiée dont le siège social
 est situé dans la ZAC du Parc des Colline de Mulhouse – Didenheim. Elle compte
 également deux autres agences: l'agence centre à Saint-Avertin (37), et
-l’agence sud à Saint-Rémy-de-Provence (13). Elle est constituée de 90 employés
-dont 30 développeurs. \\ Son secteur d'activité est l'édition d'outils
+l’agence sud à Saint-Rémy-de-Provence (13). Elle est constituée de 86 employés
+dont 24 développeurs. \\ Son secteur d'activité est l'édition d'outils
 numériques destinés aux collectivités locales (communes, communautés de
 communes, villes). Elle distribue aujourd'hui trois gammes de logiciels.
 Chronologiquement:
@@ -172,7 +172,8 @@ Chronologiquement:
     (organisation, gestion des fourrières, géo-verbalisation) et prévention de la
     délinquance (géo-prévention délinquance et des incivilités).
   \item[La gamme e-administration] Elle regroupe des services en ligne et mobiles à
-    l'attention des citoyens.
+    l'attention des citoyens et s'interface sur les logiciels de la gamme
+    population.
 \end{description}
 
 L'entreprise est un acteur majeur du marché dans cette gamme de logiciels. Elle
@@ -215,9 +216,9 @@ est nécessaire d'utiliser un système de position comprenant:
     France, la norme est le référentiel RGF (Réseau Géodésique Français) 93.
     Cependant, la norme internationale est le WGS (World Geodetic System) 84,
     utilisé par les Américains et associé au système GPS\@.
-    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Sites constituant le
-      réseau de base français pour maintenir le RGF93}{Les sites constituant le
-      réseau de base français}
+    \insererfigure{figures/rgf93rbf.jpeg}{6.5cm}{Sites constituant le réseau de
+      base français pour maintenir le RGF93}{Les sites constituant le réseau de base
+      français}
 
   \item[le choix d'un système de projections et de coordonnées] dont le but est de
     projeter l'image de la terre assimilé à un ellipsoïde en une surface plane.
@@ -416,6 +417,7 @@ que suffisante pour répondre à nos besoins actuels.
 Nous avons décidé pour la réécriture, d'initialiser un nouveau projet Angular
 et de tout réimplémenter en suivant l'architecture que nous avions défini afin
 de rendre l'application maintenable:
+
 \newpage
 \begin{minted}[autogobble, frame = single]{text}
 src/app/
@@ -687,25 +689,26 @@ textsc{Map-Viewer} et sera également implémentée dans \textsc{Map Manager}.
 
 De plus, de nouvelles évolutions sont imaginées mais pas encore programmées. Il
 serait intéressant d'implémenter le visualiseur d'image
-\href{https://www.mapillary.com/app/}{Mapillary}. Il permet de visualiser la
-rue sur des photos partagées par des contributeurs. Nous voudrions visualiser
-et dessiner des objets géographiques sur la photo.
+\href{https://www.mapillary.com/app/}{Mapillary}. Celui-ci permet de visualiser
+des photographies de la voirie partagées par des contributeurs. Nous pourrions
+ainsi dessiner des objets géographiques sur la photo en visualisant le lieu.
 
 \section{Conclusion}
 À mon arrivée dans le service, mon collègue m’a confié de diverses tâches dans
 les différents mini-services cartographiques, me permettant ainsi de découvrir
-leurs différentes fonctionnalités. L'absence de documentation m'a permis de
-m’extravertir et d’échanger avec mes collègues. Elle m’a également permis
-d’apprendre l’origine des choix et décisions techniques réalisés, d’enrichir mes
-connaissances sur le domaine métier et le besoin des clients. J’ai également eu
-l’occasion d’amener l’utilisation de certaines bonnes pratiques permettant de gagner
-du temps et d’augmenter la maintenabilité dans d'autres projets.
-Le projet \textsc{Map Manager} dont j'ai eu la tâche de refonte et d'ajout de nouvelles
-fonctionnalités, exploité par les différentes \gls{applicationsmetier}, m’a également permis
-de découvrir l’application de la gamme sécurité destinée à la police municipale,
-« MunicipolWEB 2 », sur laquelle portera ma prochaine mission avec l’enchainement
-sur un contrat de professionnalisation. L'application \textsc{Map Manager} est aujourd'hui déployée sur
-l'environnement de production de l'entreprise.
+leurs différentes fonctionnalités. L'échange continu avec mes collègues m'a
+permis de m'extravertir et d’en apprendre plus l’origine des choix et décisions
+techniques qui ont été réalisés, d’enrichir mes connaissances sur le domaine
+métier et le besoin des clients. J’ai également eu l’occasion d’amener
+l’utilisation de certaines bonnes pratiques permettant de gagner du temps et
+d’augmenter la maintenabilité dans d'autres projets. Le projet \textsc{Map
+  Manager} dont j'ai eu la tâche de refonte et d'ajout de nouvelles
+fonctionnalités, exploité par les différentes \gls{applicationsmetier}, m’a
+également permis de découvrir l’application de la gamme sécurité destinée à la
+police municipale, « Municipol WEB », sur laquelle portera ma prochaine mission
+avec l’enchainement sur un contrat de professionnalisation. L'application
+\textsc{Map Manager} est aujourd'hui déployée sur l'environnement de production
+de l'entreprise.
 
 %------------ FIN ----------------
 \newpage
