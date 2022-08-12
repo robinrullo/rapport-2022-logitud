@@ -42,7 +42,7 @@ Refactorisation d'une application SIG.
 
 ---
 
-## 1. Introduction
+## Introduction
 
 ![bg vertical right w:400px](images/intro/geospatial_data.png)
 ![bg vertical right w:400px](images/intro/precontrol.png)
@@ -105,7 +105,9 @@ Refactorisation d'une application SIG.
 
 # Géomatique
 
-<!-- La géomatique est la science de la  -->
+<!--
+La géomatique regroupe les pratiques, les méthodes et les technologies permettant decollecter, analyer et diffuser les données géographiques. L'objectif final est de les représenter, c'est le besoin auquel répond map-manager.
+-->
 
 ![bg w:300](images/geomatic/totalstation.png)
 ![bg w:300](images/geomatic/dataprocessing.png)
@@ -114,6 +116,10 @@ Refactorisation d'une application SIG.
 ---
 
 ## Projection
+
+<!--
+Afin de représenter les données géographiques, il est nécessaire de définir un référentiel et une projection pour les données. La projection permet de représenter la surface de la Terre sur la surface plane d'une carte. Le référentiel permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte.
+-->
 
 ![w:1125](images/geomatic/lambertCC_mercator84_merged.png)
 Lambert Conique Conforme                  World Geodetic System WGS 84
@@ -141,6 +147,8 @@ Il est possible de créer des multi-géométrie, une géométrie qui contient un
 ---
 
 # Le stage
+
+_Refactorisation d'une application SIG._
 
 <!-- Présentation du plan -->
 <!-- _class: lead -->
@@ -219,42 +227,20 @@ J'ai ensuite débuté l'implémentation de la maquette dans l'application Angula
 
 ---
 
-### Intéractions avec la carte
+<!-- ### Intéractions avec la carte
 
 <!--
 Nous avons décidé pour implémenter les actions sur la carte, de mettre en place le desing pattern adapter pour faciliter le passage vers une autre librairie de WebMapping si l'actuelle ne répond plus aux besoins de l'application.
 Pour expliquer rapidement, nous définissons une interface `IMapService` qui est implémenté par MapService. Ce service implémente les méthodes d'openlayers. Le composant dans lequel on implémente la carte utilise le service à travers l'interface. Si nous décidons de changer de librairie cartographique, il suffira de faire une seconde implémentation pour IMapService.
--->
+->
 
 Pattern adapter:
 
-<!--
-@startuml
-
-class MapComponent {
-  displayGeoEntities(): void
-}
-
-interface IMapService {
-  public addGeoEntities(geoEntities: GeoEntities): Layer
-}
-
-class MapService {
-  addGeoEntities(geoEntities: GeoEntities): Layer
-}
-class OpenLayerImpl{
-  addLayer(source: OlSource)
-}
-MapComponent -> IMapService
-MapService ..|> IMapService
-MapService -> OpenLayerImpl
-
-@enduml
--->
 
 ![bg w:1000](images/map-manager/adapter.svg)
 
 ---
+-->
 
 #### Sémiologie
 
@@ -400,12 +386,16 @@ Bien que l'application soit plus riche en fonctionnalités que la version préc�
 # Conclusion
 
 <!--
-Pour conclure, la nouvelle version de l'application réponds aux attentes et besoins que l'on m'a fixe. L'interface est ergonomique et l'application est fonctionnelle. Deplus, j'ai terminé la refonte rapidement, ce qui m'a permi de participer à d'autres projets.
+Pour conclure, la nouvelle version de l'application réponds aux attentes et besoins que l'on m'a fixé. L'interface est ergonomique et l'application est fonctionnelle.
+J'ai réussi à trouver une solutions pour les différents problèmes rencontrés comme l'absence de documentation ou contraintes liés à l'entreprise.
+ De plus, j'ai terminé la refonte rapidement, ce qui m'a permi de participer à d'autres projets.
 -->
 
-✅ Répond aux besoins
-✅ Ergonomique, fonctionnel
-✅ Rapidité de développement
+Répond aux besoins:
+✅ Ergonomique,
+✅ Iso-fonctionnel et ➕
+✅ En production
+✅ Difficultés surmontées
 
 ⮕ Problématique résolue
 
