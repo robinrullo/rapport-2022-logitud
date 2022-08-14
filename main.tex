@@ -24,7 +24,7 @@
 }
 \newglossaryentry{agile}
 {
-  name=agile,
+  name=Agile,
   description={La méthodologie Agile est un modèle d'organisation de projet qui place le client à son cœur}
 }
 \newglossaryentry{proxy}
@@ -87,7 +87,7 @@
 \fairepagedegarde%Créer la page de garde
 \fairemarges%Afficher les marges
 
-\pagenumbering{roman}
+\pagenumbering{gobble}
 
 %----------- Remerciements -------------------
 
@@ -126,13 +126,13 @@
 \pagenumbering{arabic}
 \section{Introduction}
 Logitud Solutions est une entreprise spécialisée dans l'édition de logiciels
-pour les collectivités, dans les domaines de la population et de la sécurité,
-depuis 30 ans. Le web s'étant beaucoup développé ses dernières années, les
-logiciels sont devenus difficiles et couteux à maintenir. L'entreprise a alors
-amorcé depuis quelques années la réécriture de ses applications lourdes liées
-au secteur de la sécurité (polices municipales) qui nécessitent une
-installation sur un poste de travail, vers des applications web fonctionnant
-sur un navigateur web ainsi que des applications pour mobiles.
+pour les collectivités, dans les domaines de la gestion de la population et de
+la sécurité depuis 30 ans. Ces dernières années, le web s'est développé de
+telle façon qu'aujourd'hui tout se fait en ligne. L'entreprise a alors amorcé
+la réécriture de ses applications lourdes liées au secteur de la sécurité
+(polices municipales) qui nécessitent une installation sur un poste de travail,
+vers des applications web fonctionnant sur un navigateur web ainsi que des
+applications pour mobiles.
 
 L'ensemble des applications clients lourds puis applications web font appel à
 des données géoréférencées. Le rôle de l'application web \gls{sig} \textsc{Map
@@ -141,14 +141,18 @@ faire évoluer l'application et la rendre plus ergonomique. Pour répondre aux
 nouveaux besoins, une refonte de l'application est nécessaire. \\
 
 Attiré et spécialisé dans les systèmes d'informations géographiques depuis le
-début de la formation à l'UHA 4.0, je souhaitais, en déposant ma candidature,
-assoir mes connaissances en géomatique dans un milieu professionnel, entouré
-d'experts pouvant me guider et échanger leurs connaissances.
+début de la formation à l'UHA 4.0, je souhaite assoir mes connaissances en
+géomatique dans un milieu professionnel, entouré d'experts pouvant me guider et
+échanger leurs connaissances. \\
+
+Ainsi, la réécriture de l'application Map-Manager me permettra de me
+perfectionner en géomatique, et apportera à l'entreprise une application qui
+répond aux besoins de ses clients.
 
 \vspace{2cm}
 
 Le rapport couvre la présentation de l'organisme dans lequel le stage a eu
-lieu, puis une présentation du stage. En fin, une conclusion boucle le rapport.
+lieu, puis une présentation du stage. Enfin, une conclusion boucle le rapport.
 
 \newpage
 %------------ Organisme d'accueil ----------------
@@ -177,14 +181,14 @@ Chronologiquement:
 \end{description}
 
 L'entreprise est un acteur majeur du marché dans cette gamme de logiciels. Elle
-équipe un tier des villes de plus de 5 000 habitants en produits d’état-civil,
+équipe un tiers des villes de plus de 5 000 habitants en produits d’état-civil,
 et les quatre cinquièmes en produits de sécurité (polices municipales).\\
 
-La méthodologie de travail adopté par les équipes de développement métier suit
+La méthodologie de travail adoptée par les équipes de développement métier suit
 les principes du \gls{SCRUM} couplé à la méthodologie \Gls{agile}. Cependant
-l'équipe de R\&D dont est rattaché le pôle de développement cartographique
-bénéficie d'énormément de liberté dans son management et aucune stratégie de
-management spécifique n'est appliquée.
+l'équipe de R\&D à laquelle est rattaché le pôle de développement
+cartographique bénéficie d'énormément de liberté dans son management et aucune
+stratégie de management spécifique n'est appliquée.
 
 \newpage
 %------------ Le stage ----------------
@@ -222,7 +226,7 @@ est nécessaire d'utiliser un système de position comprenant:
       réseau de base français}
 
   \item[le choix d'un système de projections et de coordonnées] dont le but est de
-    projeter l'image de la terre assimilé à un ellipsoïde en une surface plane.
+    projeter l'image de la terre assimilée à un ellipsoïde en une surface plane.
     Encore une fois, en France, nous utilisons la projection Lambert 93. Cependant,
     la plupart des cartes numériques mises à dispositions du grand public utilisent
     la projection WGS84 Web Mercator (figure~\ref{fig: Exemple de projections}).
@@ -233,9 +237,11 @@ est nécessaire d'utiliser un système de position comprenant:
   \copyright{} Tobias Jung
 }{Exemple de projections}
 
-\textsc{Map Manager} est une application \gls{sig}. Le \gls{sig}, pour Système d'Information Géographique, est un système d’information
-qui intègre, stocke, analyse et affiche l'information géographique qui est de
-la donnée localisée sur le territoire. Cette donnée peut être:
+\textsc{Map Manager} est une application \gls{sig}. Le \gls{sig}, pour Système
+d'Information Géographique, est un système d’information qui intègre, stocke,
+analyse et affiche l'information géographique qui est de la donnée localisée
+sur le territoire. L'application ne traite aujourd'hui uniquement les données
+vectorielles. Dans ce cas, cette donnée peut contenir des données de type:
 \begin{description}
   \item[Géométrique]: La donnée décrit la forme et la position (points, lignes,
   polygones), repéré dans un système de projection retenu et donc superposable
@@ -272,10 +278,10 @@ l'ayant implémenté.
 J’ai réalisé la première semaine un document rendant (cf.\
 \hyperlink{ANNEX2}{annexe 2}) compte de l’état des fonctionnalités développées
 en suivant l’approche du « Manual Testing », pratique qui consiste à tester
-toutes les fonctionnalités manuellement sur l’interface web afin de tester
-entièrement les fonctionnalités. Ce document m’a permis de définir le point de
-départ et de comprendre le besoin des clients. Il m'a permis de mettre en
-évidence les points qui suivent.
+toutes les fonctionnalités manuellement sur l’interface web afin de connaître
+ou identifier les limites, les qualités et defaut. Ce document m’a permis de
+définir le point de départ et de comprendre le besoin des clients. Il m'a
+permis de mettre en évidence les points qui suivent.
 
 \subsubsection{Le lien entre les géométries et les objets dans les applications}
 Il y a trois catégories d'objets géoréférencés qui sont constitués des trois
@@ -325,7 +331,7 @@ mise à jour. Pour les recherches d'adresses en dehors de la France, nous
 consommons un service gratuit basé sur les données open-source d'OpenStreetMap.
 
 \insererfigure{figures/architecture-SIG.png}{11cm}{Architecture
-  \gls{sig}}{Architecture SIG}
+  \gls{sig} de l'entreprise}{Architecture SIG}
 
 \subsection{Définition du besoin}
 \textsc{Map Manager} répond au besoin d'administration de secteurs, itinéraires
@@ -346,8 +352,8 @@ monopolisée par le menu de recherche et un tableau (figure~\ref{fig: Manque de
   menus}{Manque de place sur l'ancienne version de l'application}
 
 En ce qui concerne ensuite la modification des géométries, on peut soit en
-ajouter, soit les modifier avec des outils de la carte très basiques. On peut
-également consulter les données qui y sont référencées.
+ajouter, soit les modifier avec des outils de la carte très élémentaires. On
+peut également consulter les données qui y sont référencées.
 
 Une page paramètre dans l'application permet de réaliser un SCRUD (Search,
 Create, Read, Update, Delete) sur les types métiers. Une autre section de
@@ -420,7 +426,6 @@ Nous avons décidé pour la réécriture, d'initialiser un nouveau projet Angula
 et de tout réimplémenter en suivant l'architecture que nous avions défini afin
 de rendre l'application maintenable:
 
-\newpage
 \begin{minted}[autogobble, frame = single]{text}
 src/app/
 +-- config
@@ -452,7 +457,7 @@ lieu de consommer réellement le service externe.
 L'application étant la seule carto-centré dans la suite d'applications, aucun
 composant n'est intégré à la librairie \textsc{WebUI-core} excepté
 l'\gls{appshell} (figure~\ref{fig: App Shell}).
-\insererfigure{figures/proto_app-shell.png}{4cm}{\Gls{appshell}}{App Shell}
+\insererfigure{figures/proto_app-shell.png}{3.5cm}{\Gls{appshell}}{App Shell}
 
 \newpage
 J'ai donc débuté par l'ajout des composant de la barre latérale avec des
@@ -602,43 +607,43 @@ d'objet. J'ai fait cela à partir d'interactions déjà existantes dans une
 extension de la librairie: \textsc{ol-ext}. Cette évolution doit permettre
 également de modifier plusieurs objets à la fois et de types différents.
 
-\paragraph{Import de géométries}\mbox{}\\
-La dernière fonctionnalité manquante dans l'application avant de pouvoir la
-mettre en production est l'import d'objets cartographiques. Deux manières d'import
-ont été demandés:
-\begin{itemize}
-  \item Importer des objets dans un type existant.
-  \item Importer et fusionner les géométries des objets dans un objet existant.
-\end{itemize}
+% \paragraph{Import de géométries}\mbox{}\\
+% La dernière fonctionnalité manquante dans l'application avant de pouvoir la
+% mettre en production est l'import d'objets cartographiques. Deux manières d'import
+% ont été demandés:
+% \begin{itemize}
+%   \item Importer des objets dans un type existant.
+%   \item Importer et fusionner les géométries des objets dans un objet existant.
+% \end{itemize}
 
-J'ai fait le choix de prendre de la dette technique en introduisant de la
-complexité inutile afin de livrer une première version de l'application
-rapidement car la présentation et mise en production étaient imminentes.
+% J'ai fait le choix de prendre de la dette technique en introduisant de la
+% complexité inutile afin de livrer une première version de l'application
+% rapidement car la présentation et mise en production étaient imminentes.
 
-Tout d'abord, j'ai créé un composant pour téléverser le fichier contentant les
-objets à importer par glissement (drop) avec des vérifications nécessaires pour
-s'assurer que le fichier pourra ensuite être traité (taille, format). J'ai
-ensuite créé un composant pour sélectionner la projection de la donnée. La
-correspondance des données attributaires et les géométries sont gérés par le
-composant d'import qui va sérialiser les données afin de les afficher sur la
-carte. OpenLayers met à disposition des développeurs des sérialiseurs pour les
-formats \textit{GeoJSON} et \textit{KML}. Pour supporter l'import du format
-Shapefile qui est un standard de nombreux logiciels \gls{sig}, il a fallu
-passer par une librairie externe permettant de convertir auparavant les données
-en \textit{GeoJSON}.
+% Tout d'abord, j'ai créé un composant pour téléverser le fichier contentant les
+% objets à importer par glissement (drop) avec des vérifications nécessaires pour
+% s'assurer que le fichier pourra ensuite être traité (taille, format). J'ai
+% ensuite créé un composant pour sélectionner la projection de la donnée. La
+% correspondance des données attributaires et les géométries sont gérés par le
+% composant d'import qui va sérialiser les données afin de les afficher sur la
+% carte. OpenLayers met à disposition des développeurs des sérialiseurs pour les
+% formats \textit{GeoJSON} et \textit{KML}. Pour supporter l'import du format
+% Shapefile qui est un standard de nombreux logiciels \gls{sig}, il a fallu
+% passer par une librairie externe permettant de convertir auparavant les données
+% en \textit{GeoJSON}.
 
-Ensuite, il faut traiter les métadonnées associées. Pour ça, un formulaire
-permet de définir la correspondance entre les métadonnées des objets importés
-et les métadonnées de notre système, figure~\ref{fig: Import d'objets
-  géographiques dans l'application}.
-\insererfigure{figures/screen_mm_import.png}{7.5cm}{Vue de l'import
-  d'objets}{Import d'objets géographiques dans l'application}
+% Ensuite, il faut traiter les métadonnées associées. Pour ça, un formulaire
+% permet de définir la correspondance entre les métadonnées des objets importés
+% et les métadonnées de notre système, figure~\ref{fig: Import d'objets
+%   géographiques dans l'application}.
+% \insererfigure{figures/screen_mm_import.png}{7.5cm}{Vue de l'import
+%   d'objets}{Import d'objets géographiques dans l'application}
 
-En ce qui concerne l'interface utilisateur, la plus grande partie avait déjà
-été codé dans l'ancienne version de l'application. Il a été nécessaire de
-séparer l'enregistrement en fonction de la destination de l'import: dans de
-nouveaux objets à ajouter à un type existant ou bien fusionner un objet
-existant. \\
+% En ce qui concerne l'interface utilisateur, la plus grande partie avait déjà
+% été codé dans l'ancienne version de l'application. Il a été nécessaire de
+% séparer l'enregistrement en fonction de la destination de l'import: dans de
+% nouveaux objets à ajouter à un type existant ou bien fusionner un objet
+% existant. \\
 
 \paragraph{Documentation de l'application}\mbox{}\\
 La dernière étape avant de créer la version a été la génération du changelog
@@ -677,6 +682,7 @@ Le processus de déploiement est géré par l'équipe en charge de
 l'infrastructure. Pour déployer l'application en production, il faut ouvrir une
 demande sur le site du support Logitud.
 
+\newpage
 \subsection{Améliorations et perspectives}
 Bien que l'application contienne plus de fonctionnalités que la précédente,
 plusieurs évolutions sont encore à implémenter et d'autres envisagées.
@@ -699,34 +705,36 @@ des photographies de la voirie partagées par des contributeurs. Nous pourrions
 ainsi dessiner des objets géographiques sur la photo en visualisant le lieu.
 
 \section{Conclusion}
-À mon arrivée dans le service, mon collègue m’a confié de diverses tâches dans
-les différents mini-services cartographiques, me permettant ainsi de découvrir
-leurs différentes fonctionnalités. L'échange continu avec mes collègues m'a
-permis de m'extravertir et d’en apprendre plus l’origine des choix et décisions
-techniques qui ont été réalisés, d’enrichir mes connaissances sur le domaine
-métier et le besoin des clients. J’ai également eu l’occasion d’amener
-l’utilisation de certaines bonnes pratiques permettant de gagner du temps et
-d’augmenter la maintenabilité dans d'autres projets. Le projet \textsc{Map
-  Manager} dont j'ai eu la tâche de refonte et d'ajout de nouvelles
-fonctionnalités, exploité par les différentes \gls{applicationsmetier}, m’a
-également permis de découvrir l’application de la gamme sécurité destinée à la
-police municipale, « Municipol WEB », sur laquelle portera ma prochaine mission
-avec l’enchainement sur un contrat de professionnalisation. L'application
-\textsc{Map Manager} est aujourd'hui déployée sur l'environnement de production
-de l'entreprise.
+À mon arrivée dans le service, mon collègue m’a confié diverses tâches dans les
+différents mini-services cartographiques. Cela m'a permis de découvrir leurs
+différentes fonctionnalités. L'échange continu avec mes collègues m'a permis de
+m'extravertir et d’apprendre l’origine des choix et décisions techniques qui
+ont été réalisés ainsi que d’enrichir mes connaissances sur le domaine métier
+et le besoin des clients. J’ai également eu l’occasion d’amener l’utilisation
+de certaines bonnes pratiques permettant de gagner du temps et d’augmenter la
+maintenabilité dans d'autres projets. Le projet \textsc{Map Manager} dont j'ai
+eu la tâche de refonte et d'ajout de nouvelles fonctionnalités, exploité par
+les différentes \gls{applicationsmetier}, m’a également permis de découvrir
+l’application de la gamme sécurité destinée à la police municipale, « Municipol
+WEB », sur laquelle portera ma prochaine mission avec l’enchainement sur un
+contrat de professionnalisation. L'application \textsc{Map Manager} est
+aujourd'hui déployée sur l'environnement de production de l'entreprise.
 
 %------------ FIN ----------------
 \newpage
+\rhead{Glossaire / Références}
+
 % Glossaire
 \printglossaries{}
 % Bibliographie
 \begin{thebibliography}{9}
   \bibitem{bworld}
-  IGN 2008, \emph{Le repère RGF93 et la projection Lambert-93}, \url{http://aiweb.techfak.uni-bielefeld.de/content/bworld-robot-control-software/}
+  IGN 2008, \emph{Le repère RGF93 et la projection Lambert-93}, \url{https://geodesie.ign.fr/contenu/fichiers/PlaqLambert93.pdf}
 \end{thebibliography}
 \newpage
 
 \section*{Résumé}
+\rhead{}
 \addcontentsline{toc}{section}{Résumé}
 
 Logitud est une entreprise éditant des logiciels répondant aux besoins des
@@ -747,10 +755,12 @@ logiciel et aucun retour négatif n'est pour l'instant connu.
 \end{itemize}
 
 \clearpage
+\rhead{ANNEXES}
+\renewcommand{\thepage}{A-\arabic{page}}
+\setcounter{page}{1}
 \appendix
-\pagenumbering{gobble}
-\section*{ANNEXE}
-\addcontentsline{toc}{section}{Annexe}
+\section*{ANNEXES}
+\addcontentsline{toc}{section}{Annexes}
 
 \subsection*{\hypertarget{ANNEX1}{ANNEXE 1 – Exemple d'une collection d'objets contenant un POI au format GeoJSON}}
 \begin{minted}[autogobble, linenos, frame = single]{JSON}
