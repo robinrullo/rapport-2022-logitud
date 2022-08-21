@@ -1,12 +1,18 @@
+Bonjour.
+Je m'appelle Robin RULLO. Je suis étudiant en 2ème année à l'UHA 4.0. Je vais vous présent le stage que j'ai effectué de mi-février à mi-aout à Logitud Solutions. Mon tuteur de stage académique est M. Elbaz et en entreprise M. Sahi ci-présent.
+Mon sujet traite de la refonte d'une application de type SIG pour système d'information géographique.
+
+---
+
 
 
 ---
 
+Logitud édite des logiciels depuis 30 ans. En 30 ans les technologies ont bien changé. L'entreprise a entrepris depuis quelques années la réécriture des logiciels client lourds, devenus difficile et couteux à maintenir vers des applications web.
 
+Ces applications interagissent et intègrent des données géospatiales comme l'application MW (Montrer la capture d'écran). C'est le rôle de Map-Manager d'administrer ces données. Bien que l'application soit déjà existante en version web, des demandes d'évolutions sur la structure et l'ergonomie a nécessité la réécriture complète de l'application.
 
----
-
-Logitud edite des logiciels depuis 1987. Depuis, les technologies ont bien changé. L'entreprise a entreprie depuis quelques années la réécriture des logiciels client lourds, devenus difficile et couteux à maintenir vers des applications web. Ces applications intéragissent et intègrent des données géospatiales comme l'application MW (Montrer la capture d'écran). C'est le rôle de Map-Manager d'administrer la données cette données. Des demandes d'évolutions sur la structure et l'ergonomie a nécéssité la réécriture complète de l'application. J'ai souhaité, grâce ce stage, gagner en compétence dans le domaine de la géomatique que nous survolerons rapdiement un peu plus tard, ainsi que dans le développement front-end avec le framework Angular
+J'ai souhaité, grâce ce stage, gagner en compétence dans le domaine de la géomatique, ainsi que dans le développement front-end avec le framework Angular
 
 ---
 
@@ -14,30 +20,26 @@ Le siège social de Logitud est basé au Parc des Collines de Mulhouse. La soci�
 
 ---
 
-Elle distribue trois gamme de logiciels:
-- La gamme population qui est tournée vers la gestion administrative des collectivités. Elle facilite le travail des agents d'état civil et leurs echanges avec les administrés.
+Elle distribue trois gamme de logiciels :
+- La gamme population qui est tournée vers la gestion administrative des collectivités. Elle facilite le travail des agents d'état civil et leurs échanges avec les administrés.
 - La gamme sécurité qui est orientée vers la gestion des métiers de la police municipale
 - Enfin la gamme e-administration qui regroupe des services en ligne et mobiles à l'attention des citoyens et qui sont interconnectés avec la gamme population.
 
 ---
 
-L'entreprise compte 86 collaborateurs dont 24 sont développeurs. Egalement 2 collaborateurs de PIX'ELLE (récemment racheté). 74 sur le site de Mulhouse)
+Pour les quelques chiffres clefs, l'entreprise compte 86 collaborateurs, 74 basés à Mulhouse. 24 d'entre-eux sont développeurs et 4, chefs de projets.
 
 ---
 
-La méthodologie de travail adoptée dans l'équipe de développement métier est Scrum-Agile bien que le process ressemble au développement en Cycle en V. Dans le service R&D, aucune méthodologie particulière n'est appliquée. La gestion des ticket dans tous les services est réalisée avec le framework Kanban
+La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter, analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
 
 ---
 
-La géomatique regroupe les pratiques, les méthodes et les technologies permettant decollecter, analyer et diffuser les données géographiques. L'objectif final est de les représenter, c'est le besoin auquel répond map-manager.
+Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter la surface de la Terre qui est un Géoïde sur une surface plane.
 
 ---
 
-Afin de représenter les données géographiques, il est nécessaire de définir un référentiel et une projection pour les données. La projection permet de représenter la surface de la Terre sur la surface plane d'une carte. Le référentiel permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte.
-
----
-
-En géomatique, on distingue 3 types de géométries:
+En géomatique, sur les objets vectoriels, on distingue 3 types de géométries :
 - Le point
 - La ligne
 - Le polygone
@@ -47,24 +49,19 @@ Il est possible de créer des multi-géométrie, une géométrie qui contient un
 
 Présentation du plan
 
----
-
-L'architecture SIG est composée de plusieurs mini-services divisé en deux thématiques. La partie entourée en orange est celle où je suis intervenu. GeoToolBox est le serveur de traitement et stockage des données géographiques.
-GeoServeur est un serveur de partage de données cartographique. Il est consommé par GeoToolbox pour les requêtes géospatiales. Il distribue également les flux cartographiques.
-MapPrint serveur est un moteur de rendu cartographique permettant de générer une carte à partir de modèles de mise en page prédéfinies.
-La deuxième thématique identifiée est la recherche d'adresses dont je ne rentrerais pas dans le détail.
+1.  [Démonstration](https://applications-dev.logitud.fr/logitud-test/map-manager/)
 
 ---
 
-
-
----
-
-L'application Map-Manager étant déjà existante, je l'ai découverte et j'ai réalisé une documentation reprenant toutes les fonctionnalités. Pour documenter les fonctionnalités, j'ai suivi les principes du manual testing en testant une par une les fonctionnalité à la main. J'ai ensuite rédigé un document rendant compte des différentes fonctionnalités développés afin de posséder un point de départ pour la nouvelle version.
+L'application à mon arrivée, était déjà existante. Cependant, de nouveaux besoins ont nécessité une modification de l'agencement des fonctionnalités
 
 ---
 
+J'ai suivi les principes du manual testing pour tester et découvrir les fonctionnalités. J'ai ensuite rédigé un document rendant compte des différentes fonctionnalités développés, joint en annexe 2 du rapport, afin de posséder un point de départ pour la nouvelle version.
 
+---
+
+On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
 
 ---
 
@@ -76,25 +73,11 @@ J'ai ensuite débuté l'implémentation de la maquette dans l'application Angula
 
 ---
 
-En plus des serveurs carto-spécifiques que je vous ai déjà présenté losrque j'ai parlé de l'architecture de l'architecture SIG de l'entreprise, l'application intéragis avec plusieurs services génériques externes. Tout d'abord, le repository afin de récupérer les informations de l'utilisateur connecté. Il intéragis également avec le serveur labels afin de récupérer les contextes de l'application métier.
+En plus des serveurs carto-spécifiques que je vous ai déjà présenté lorsque j'ai parlé de l'architecture de l'architecture SIG de l'entreprise, l'application interagis avec plusieurs services génériques externes. Tout d'abord, le repository afin de récupérer les informations de l'utilisateur connecté. Il interagis également avec le serveur labels afin de récupérer les contextes de l'application métier.
 
 ---
 
-### Intéractions avec la carte
-
-<!--
-Nous avons décidé pour implémenter les actions sur la carte, de mettre en place le desing pattern adapter pour faciliter le passage vers une autre librairie de WebMapping si l'actuelle ne répond plus aux besoins de l'application.
-Pour expliquer rapidement, nous définissons une interface `IMapService` qui est implémenté par MapService. Ce service implémente les méthodes d'openlayers. Le composant dans lequel on implémente la carte utilise le service à travers l'interface. Si nous décidons de changer de librairie cartographique, il suffira de faire une seconde implémentation pour IMapService.
-->
-
-Pattern adapter:
-
-
-![bg w:1000](images/map-manager/adapter.svg)
-
----
-
-Maintenant que nous avons une carte, nous pouvons afficher des objets dessus, nous devons également spécifier un style. Les objets contiennent des métadonnées en plus de la géométrie. Ils peuvent contenir des métadonnées sémiologiques qui permettent de définir en l'occurence leur style à travers la couleur et l'icon.
+Maintenant que nous avons une carte, nous pouvons afficher des objets dessus, nous devons également spécifier un style. Les objets contiennent des métadonnées en plus de la géométrie. Ils peuvent contenir des métadonnées sémiologiques qui permettent de définir en l'occurrence leur style à travers la couleur et l'icon.
 
 ---
 
@@ -102,7 +85,7 @@ Chaque librairie ou service implémente une méthode similaire, permettant de r�
 
 ---
 
-En revenche, les icones de clarity design demande plus de traitement. En effet, certains icones de la librairie possèdent des états cachés par défaut avec des couleurs spécifiques grâce au style de la page HTML. Ce style n'est pas pris en compte dans le canvas utilisé par la carte.
+En revanche, les icones de clarity design demande plus de traitement. En effet, certains icones de la librairie possèdent des états cachés par défaut avec des couleurs spécifiques grâce au style de la page HTML. Ce style n'est pas pris en compte dans le canvas utilisé par la carte.
 
 ---
 
@@ -110,21 +93,21 @@ J'ai donc écrit une fonction récursive qui permet de supprimer tous les noeuds
 
 ---
 
-Avant de mettre en production la novuelle version de Map Manager, on m'a demandé de générer un changelog. Depuis le début du développement je me suis donné comme contrainte de suivre la convention de commit d'Angular; Présenter la convention
+Avant de mettre en production la nouvelle version de Map Manager, on m'a demandé de générer un changelog. Depuis le début du développement je me suis donné comme contrainte de suivre la convention de commit d'Angular; Présenter la convention
 
 ---
 
-Cela m'a permi de générer automatiquement le changelog et de suivre la convention SemVer. Le générateur de changelog détecte et bump le numéro de version en fonction du type.
+Cela m'a permis de générer automatiquement le changelog et de suivre la convention SemVer. Le générateur de changelog détecte et bump le numéro de version en fonction du type.
 
 ---
 
-Bien que l'application soit plus riche en fonctionnalités que la version précédante, plusieurs améliorations sont envisavées.
+Bien que l'application soit plus riche en fonctionnalités que la version précédente, plusieurs améliorations sont envisagées.
 
 ---
 
-Pour conclure, la nouvelle version de l'application réponds aux attentes et besoins que l'on m'a fixé. L'interface est ergonomique et l'application est fonctionnelle.
-J'ai réussi à trouver une solutions pour les différents problèmes rencontrés comme l'absence de documentation ou contraintes liés à l'entreprise.
- De plus, j'ai terminé la refonte rapidement, ce qui m'a permi de participer à d'autres projets.
+Pour conclure, la nouvelle version de l'application réponds aux attentes et besoins que l'on m'a fixés. L'interface est ergonomique et l'application est fonctionnelle.
+J'ai réussi à trouver une solution pour chaque problèmes que j'ai rencontrés comme l'absence de documentation ou contraintes liés à l'entreprise.
+De plus, j'ai terminé la refonte rapidement, ce qui m'a permis de participer à d'autres projets.
 
 ---
 
