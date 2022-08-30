@@ -1,3 +1,5 @@
+!!! Transitions,
+
 Bonjour.
 Je m'appelle Robin RULLO. Je suis étudiant en 2ème année à l'UHA 4.0. Je vais vous présent le stage que j'ai effectué de mi-février à mi-aout à Logitud Solutions. Mon tuteur de stage académique est M. Elbaz et en entreprise M. Sahi ci-présent.
 Mon sujet traite de la refonte d'une application de type SIG pour système d'information géographique.
@@ -10,9 +12,7 @@ Mon sujet traite de la refonte d'une application de type SIG pour système d'inf
 
 Logitud édite des logiciels depuis 30 ans. En 30 ans les technologies ont bien changé. L'entreprise a entrepris depuis quelques années la réécriture des logiciels client lourds, devenus difficile et couteux à maintenir vers des applications web.
 
-Ces applications interagissent et intègrent des données géospatiales comme l'application MW (Montrer la capture d'écran). C'est le rôle de Map-Manager d'administrer ces données. Bien que l'application soit déjà existante en version web, des demandes d'évolutions sur la structure et l'ergonomie a nécessité la réécriture complète de l'application.
-
-J'ai souhaité, grâce ce stage, gagner en compétence dans le domaine de la géomatique, ainsi que dans le développement front-end avec le framework Angular
+Les nouvelles applications contrairement aux anciennes intègrent un lot important d'informations cartographiques.
 
 ---
 
@@ -29,17 +29,22 @@ Elle distribue trois gamme de logiciels :
 
 Pour les quelques chiffres clefs, l'entreprise compte 86 collaborateurs, 74 basés à Mulhouse. 24 d'entre-eux sont développeurs et 4, chefs de projets.
 
----
-
-La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter, analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
+J'ai souhaité en déposant ma candidature chez Logitud, gagner en compétence dans le domaine de la géomatique, ainsi que dans le développement front-end avec le framework Angular
 
 ---
 
-Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter la surface de la Terre qui est un Géoïde sur une surface plane.
+La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter (Photogramétrie, topographie et télédection spatial), analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
+
+Analyse: produits d'analyse de données comme ESRI, ArcGIS, QGIS...
+Objectif final Comité de pilotage de prendre une décision
 
 ---
 
-En géomatique, sur les objets vectoriels, on distingue 3 types de géométries :
+Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter le globe sur une surface plane.
+
+---
+
+En géomatique, sur les collections d'objets vectoriels comme par exemple le format GeoJSON dont un exemple est joint en annexe 1 du rapport, on distingue 3 types de géométries :
 - Le point
 - La ligne
 - Le polygone
@@ -53,6 +58,55 @@ Présentation du plan
 
 ---
 
+On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
+
+
+La pm veut poser la position de la caméra avec la zone de couverture du caméras. Les diférentes geom était interfacés à part.
+
+---
+
+L'application Map-Manager est l'application qui permet de centraliser la gestions des objets géographiques des logiciels (ex cartographie des cimetières dans webcimetière, MW, etc...) dans une seule application.
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+Map-Viewer lib implémentée dans les différentes aplications pour afficher le rendu la carte.
+
+---
+
+Map-Manager est une Application Web Angular 9. Nous avons été contraints à ce choix par l'écosystème existant de Logitud.
+
+Map Manager intéragis avec les différents services cartographiques de l'entreprise. Elle récupère les géométries sur le serveur GeoToolbox. Ce serveur utilisant le framework Springboot permet de réaliser les traitements nécéssaires aux données géographique. Il permet notamment de gérer les buffers, les intersections de géométries, les calculs de distance.
+Le deuxième service avec lequel intéragis Map-Manager est le service de recherche d'adresse. Il est basé sur le moteur de recherche Addok, maintenu par Etalab (organisme de l'état). Il permet d'intégrer les données de la BAN (Base d'Adresses Nationale).
+Le dernier service cartographique avec lequel intéragis Map-Manager est le service d'impression de la carte. Il est basé sur MapFish qui est un moteur de rendu cartographique. MapFish se base sur un modèle provenant de l'outil Jaspersoft qui est également la librairie de rendu de documents la plus mature de l'écosystème Java.
+
+Revoir les titres des services
+
+---
+
 L'application à mon arrivée, était déjà existante. Cependant, de nouveaux besoins ont nécessité une modification de l'agencement des fonctionnalités
 
 ---
@@ -61,35 +115,11 @@ J'ai suivi les principes du manual testing pour tester et découvrir les fonctio
 
 ---
 
-On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
-
----
-
 J'ai débuté par le prototypage de la nouvelle interface utilisateur sur le logiciel Adobe XD. Je me suis inspiré pour la première version de la maquette de l'application mapillary. J'ai ensuite retravaillé la présentation pour conserver une cohérence avec les autres applications de la suite logicielle. Nous avons ensuite validé la maquette avec les représentants du service client afin de s'assurer de répondre aux nouveaux besoins.
 
 ---
 
 J'ai ensuite débuté l'implémentation de la maquette dans l'application Angular
-
----
-
-En plus des serveurs carto-spécifiques que je vous ai déjà présenté lorsque j'ai parlé de l'architecture de l'architecture SIG de l'entreprise, l'application interagis avec plusieurs services génériques externes. Tout d'abord, le repository afin de récupérer les informations de l'utilisateur connecté. Il interagis également avec le serveur labels afin de récupérer les contextes de l'application métier.
-
----
-
-Maintenant que nous avons une carte, nous pouvons afficher des objets dessus, nous devons également spécifier un style. Les objets contiennent des métadonnées en plus de la géométrie. Ils peuvent contenir des métadonnées sémiologiques qui permettent de définir en l'occurrence leur style à travers la couleur et l'icon.
-
----
-
-Chaque librairie ou service implémente une méthode similaire, permettant de récupérer la définition de l'icone. Le service Labels retourne directement l'image encodé en base 64. La librairie Font-awesome retourne le code SVG qui devra être encodée en base 64.
-
----
-
-En revanche, les icones de clarity design demande plus de traitement. En effet, certains icones de la librairie possèdent des états cachés par défaut avec des couleurs spécifiques grâce au style de la page HTML. Ce style n'est pas pris en compte dans le canvas utilisé par la carte.
-
----
-
-J'ai donc écrit une fonction récursive qui permet de supprimer tous les noeuds du svg contenant la classe que j'ai blacklisté
 
 ---
 

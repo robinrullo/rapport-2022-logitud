@@ -26,6 +26,8 @@ header{
 }
 </style>
 
+<!-- !!! Transitions,  -->
+
 <!--
 Bonjour.
 Je m'appelle Robin RULLO. Je suis étudiant en 2ème année à l'UHA 4.0. Je vais vous présent le stage que j'ai effectué de mi-février à mi-aout à Logitud Solutions. Mon tuteur de stage académique est M. Elbaz et en entreprise M. Sahi ci-présent.
@@ -38,7 +40,7 @@ Mon sujet traite de la refonte d'une application de type SIG pour système d'inf
 
 ### Soutenance de stage
 
-_Refactorisation d'une application SIG_
+_Réécriture et amélioration d'une application SIG_
 
 <br/>
 
@@ -65,14 +67,11 @@ _Refactorisation d'une application SIG_
 <!--
 Logitud édite des logiciels depuis 30 ans. En 30 ans les technologies ont bien changé. L'entreprise a entrepris depuis quelques années la réécriture des logiciels client lourds, devenus difficile et couteux à maintenir vers des applications web.
 
-Ces applications interagissent et intègrent des données géospatiales comme l'application MW (Montrer la capture d'écran). C'est le rôle de Map-Manager d'administrer ces données. Bien que l'application soit déjà existante en version web, des demandes d'évolutions sur la structure et l'ergonomie a nécessité la réécriture complète de l'application.
-
-J'ai souhaité, grâce ce stage, gagner en compétence dans le domaine de la géomatique, ainsi que dans le développement front-end avec le framework Angular
+Les nouvelles applications contrairement aux anciennes intègrent un lot important d'informations cartographiques.
 -->
 
 - Application Web "clients légers"
 - Applications avec données géospatiales
-- Expérience en géomatique
 
 ---
 
@@ -109,9 +108,11 @@ Elle distribue trois gamme de logiciels :
 
 <!--
 Pour les quelques chiffres clefs, l'entreprise compte 86 collaborateurs, 74 basés à Mulhouse. 24 d'entre-eux sont développeurs et 4, chefs de projets.
+
+J'ai souhaité en déposant ma candidature chez Logitud, gagner en compétence dans le domaine de la géomatique, ainsi que dans le développement front-end avec le framework Angular
 -->
 
-- 86 Employés (24 Développeurs)
+- 86 Collaborateurs (24 Développeurs)
 - Gamme population: 1/3 des villes (> 5 000 habitants)
 - Gamme sécurité: 4/5 des villes (> 5 000 habitants)
 
@@ -120,11 +121,14 @@ Pour les quelques chiffres clefs, l'entreprise compte 86 collaborateurs, 74 bas�
 # Géomatique
 
 <!--
-La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter, analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
+La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter (Photogramétrie, topographie et télédection spatial), analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
+
+Analyse: produits d'analyse de données comme ESRI, ArcGIS, QGIS...
+Objectif final Comité de pilotage de prendre une décision
 -->
 
-![bg w:300](images/geomatic/totalstation.png)
-![bg w:300](images/geomatic/dataprocessing.png)
+![bg w:300](images/geomatic/acquisition.png)
+![bg w:300](images/geomatic/processing.png)
 ![bg w:300](images/geomatic/report-icon.svg)
 
 ---
@@ -132,7 +136,7 @@ La géomatique regroupe les pratiques, les méthodes et les technologies permett
 ## Projection
 
 <!--
-Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter la surface de la Terre qui est un Géoïde sur une surface plane.
+Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter le globe sur une surface plane.
 -->
 
 ![w:1125](images/geomatic/lambertCC_mercator84_merged.png)
@@ -143,7 +147,7 @@ Lambert Conique Conforme                  World Geodetic Syste
 ## Géométries
 
 <!--
-En géomatique, sur les objets vectoriels, on distingue 3 types de géométries :
+En géomatique, sur les collections d'objets vectoriels comme par exemple le format GeoJSON dont un exemple est joint en annexe 1 du rapport, on distingue 3 types de géométries :
 - Le point
 - La ligne
 - Le polygone
@@ -163,17 +167,126 @@ Il est possible de créer des multi-géométrie, une géométrie qui contient un
 
 # Le stage
 
-_Refactorisation d'une application SIG_
+_Réécriture et amélioration d'une application SIG_
 
 <!-- Présentation du plan -->
 <!-- _class: lead -->
 
-1.  [Documentation de l'existant](#11)
-1.  [Prototypage](#14)
-1.  [Intégration de la maquette](#15)
-1.  [Documentation des modifications](#21)
-1.  [Évolutions et perspectives](#23)
+1. [Présentation des besoins]()
+1. [Présentation de l'application]()
+1. [Documentation de l'existant]()
+1. [Prototypage]()
+1. [Intégration de la maquette]()
+1. [Documentation des modifications]()
+1. [Évolutions et perspectives]()
 <!-- 1.  [Démonstration](https://applications-dev.logitud.fr/logitud-test/map-manager/) -->
+
+---
+
+## Besoins
+
+<!--
+On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
+
+
+La pm veut poser la position de la caméra avec la zone de couverture du caméras. Les diférentes geom était interfacés à part.
+-->
+
+![bg right](./images/map-manager/camera-couverture.png)
+
+- Isofonctionnalité
+- Ergonomie
+- Carto-centré, page unique
+- Géométries regroupées
+
+---
+
+<!-- _class: lead -->
+
+## Map-Manager
+
+<!-- L'application Map-Manager est l'application qui permet de centraliser la gestions des objets géographiques des logiciels (ex cartographie des cimetières dans webcimetière, MW, etc...) dans une seule application.
+-->
+
+![h:550 center](./images/map-manager/map-manager-wide.png)
+
+---
+
+## Fonctionnalités
+
+- Affichage de collections d'objets géographiques
+
+![bg right:40% h:90%](./images/map-manager/select-types.png)
+![w:500px center](./images/map-manager/types-menu.png)
+
+---
+
+## Fonctionnalités
+
+- Affichage du contenu des collections
+
+![w:650px center](./images/map-manager/type-details.png)
+
+---
+
+## Fonctionnalités
+
+- Ajout d'objets géographiques
+
+![w:650 center](./images/map-manager/add-object.png)
+
+---
+
+## Fonctionnalités
+
+- Dessin / Modification d'objets géographiques
+
+![w:1100 center](./images/map-manager/interactions-toolbar.png)
+
+![w:300 center](./images/map-manager/move-interaction.jpeg)
+
+---
+
+## Fonctionnalités
+
+- Import d'objets géographiques
+
+![bg right:58% contain](./images/map-manager/import-a-file.png)
+
+---
+
+## Fonctionnalités
+
+- Recherche d'adresses
+
+![w:800 center](./images/map-manager/address-search.png)
+
+---
+
+## Map-Viewer
+
+![bg right:60% contain](./images/map-manager/map-viewer.png)
+
+- Librairie Angular Commune
+
+<!-- Map-Viewer lib implémentée dans les différentes aplications pour afficher le rendu la carte.
+-->
+
+---
+
+### Architecture SIG de Logitud
+
+<!--
+Map-Manager est une Application Web Angular 9. Nous avons été contraints à ce choix par l'écosystème existant de Logitud.
+
+Map Manager intéragis avec les différents services cartographiques de l'entreprise. Elle récupère les géométries sur le serveur GeoToolbox. Ce serveur utilisant le framework Springboot permet de réaliser les traitements nécéssaires aux données géographique. Il permet notamment de gérer les buffers, les intersections de géométries, les calculs de distance.
+Le deuxième service avec lequel intéragis Map-Manager est le service de recherche d'adresse. Il est basé sur le moteur de recherche Addok, maintenu par Etalab (organisme de l'état). Il permet d'intégrer les données de la BAN (Base d'Adresses Nationale).
+Le dernier service cartographique avec lequel intéragis Map-Manager est le service d'impression de la carte. Il est basé sur MapFish qui est un moteur de rendu cartographique. MapFish se base sur un modèle provenant de l'outil Jaspersoft qui est également la librairie de rendu de documents la plus mature de l'écosystème Java.
+-->
+
+<!-- Revoir les titres des services -->
+
+![h:600 center](./images/map-manager/external-services.png)
 
 ---
 
@@ -195,19 +308,6 @@ J'ai suivi les principes du manual testing pour tester et découvrir les fonctio
 -->
 
 ![center w:580](./images/map-manager/analyse_fct.png)
-
----
-
-## Besoins
-
-<!--
-On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
--->
-
-- Isofonctionnalité
-- Ergonomie
-- Carto-centré, page unique
-- Géométries regroupées
 
 ---
 
@@ -233,121 +333,7 @@ J'ai ensuite débuté l'implémentation de la maquette dans l'application Angula
 
 ---
 
-### Interaction avec les services externes
-
-<!--
-En plus des serveurs carto-spécifiques que je vous ai déjà présenté lorsque j'ai parlé de l'architecture de l'architecture SIG de l'entreprise, l'application interagis avec plusieurs services génériques externes. Tout d'abord, le repository afin de récupérer les informations de l'utilisateur connecté. Il interagis également avec le serveur labels afin de récupérer les contextes de l'application métier.
--->
-
-![h:500 center](./images/map-manager/external_services.png)
-
----
-
-#### Sémiologie
-
-<!--
-Maintenant que nous avons une carte, nous pouvons afficher des objets dessus, nous devons également spécifier un style. Les objets contiennent des métadonnées en plus de la géométrie. Ils peuvent contenir des métadonnées sémiologiques qui permettent de définir en l'occurrence leur style à travers la couleur et l'icon.
- -->
-
-![bg w:50%](images/map-manager/color_picker.png)
-![bg w:45%](images/map-manager/plus-line.svg)
-![bg w:30%](images/map-manager/map-marker.png)
-![bg w:50%](images/map-manager/arrow--right.svg)
-![bg w:40%](images/map-manager/poi_marker.png)
-
----
-
-#### Récupération de l'icône
-
-<!--
-Chaque librairie ou service implémente une méthode similaire, permettant de récupérer la définition de l'icone. Le service Labels retourne directement l'image encodé en base 64. La librairie Font-awesome retourne le code SVG qui devra être encodée en base 64.
--->
-
-`IconLibrary.getIcon(iconName: string): SVGIcon`
-
-- Labels 😀 :
-
-```text
-data:image/{...};base64,{...}
-```
-
-- Fontawesome 😐 :
-
-```svg
-<svg xmlns="http://www.w3.org/2000/svg"><path >{...}</path></svg>
-```
-
----
-
-<!--
-En revanche, les icones de clarity design demande plus de traitement. En effet, certains icones de la librairie possèdent des états cachés par défaut avec des couleurs spécifiques grâce au style de la page HTML. Ce style n'est pas pris en compte dans le canvas utilisé par la carte.
--->
-
-- Clarity ☹️ :
-  ![center w:300](images/map-manager/clr_convert.png)
-
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" class="can-badge can-alert has-solid ">
-  <path d="{...}" class="clr-i-outline clr-i-outline-path-1"></path>
-  <path d="{...}" class="clr-i-outline clr-i-outline-path-2"></path>
-  <path d="{...}" class="clr-i-outline clr-i-outline-path-3"></path>
-
-  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-1--badged"></path>
-  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-2--badged"></path>
-  <path d="{...}" class="clr-i-outline--badged clr-i-outline-path-3--badged"></path>
-  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-1--alerted"></path>
-  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-2--alerted"></path>
-  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-3--alerted"></path>
-  <path d="{...}" class="clr-i-outline--alerted clr-i-outline-path-4--alerted clr-i-alert"></path>
-  <path d="{...}" class="clr-i-solid clr-i-solid-path-1"></path>
-  <path d="{...}" class="clr-i-solid--badged clr-i-solid-path-1--badged"></path>
-  <path d="{...}" class="clr-i-solid--alerted clr-i-solid-path-1--alerted"></path>
-  <path d="{...}" class="clr-i-solid--alerted clr-i-solid-path-1--alerted clr-i-alert"></path>
-</svg>
-```
-
----
-
-<!--
-J'ai donc écrit une fonction récursive qui permet de supprimer tous les noeuds du svg contenant la classe que j'ai blacklisté
--->
-
-```ts
-const CSS_BLACKLIST = [
-  "clr-i-solid",
-  "clr-i-badge",
-  "clr-i-alert",
-  "clr-i-solid--alerted",
-  "clr-i-solid--badged",
-];
-
-const removeBlacklistedNodes = (nodeElements) => {
-  nodeElements.forEach((node: Node) => {
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      // Recursively filter nodes
-      if (node.childNodes?.length > 0) {
-        removeBlacklistedNodes(node.childNodes);
-      }
-
-      // Element classes
-      const cssClasses =
-        (node as Element).getAttribute("class")?.split(" ") ?? [];
-
-      // Remove blacklisted node
-      if (CSS_BLACKLIST.filter((bl) => cssClasses.includes(bl)).length > 0) {
-        node.parentNode.removeChild(node);
-      }
-    }
-  });
-};
-
-// Remove blacklisted nodes
-removeBlacklistedNodes(svgElement.childNodes);
-```
-
----
-
-### Documentation des modifications et livraisons
+### Documentation des modifications du code source
 
 <!--
 Avant de mettre en production la nouvelle version de Map Manager, on m'a demandé de générer un changelog. Depuis le début du développement je me suis donné comme contrainte de suivre la convention de commit d'Angular; Présenter la convention
@@ -371,15 +357,15 @@ Cela m'a permis de générer automatiquement le changelog et de suivre la conven
 
 ---
 
-# Améliorations et perspectives
+## Evolutions futures
 
 <!--
 Bien que l'application soit plus riche en fonctionnalités que la version précédente, plusieurs améliorations sont envisagées.
 -->
 
-- Personnalisation utilisateur
-- Impression
-- Viewer Mapillary
+- Préférences utilisateur
+- Impression de la carte
+- Dessin sur image
 - Nouvelles demandes des clients
 
 ![bg vertical left](images/after/tile_layer.png)
