@@ -65,6 +65,8 @@ _Réécriture et amélioration d'une application SIG_
 ![bg vertical right w:400px](images/intro/precontrol.png)
 
 <!--
+1,5 minutes
+
 Logitud édite des logiciels depuis 30 ans. En 30 ans les technologies ont bien changé. L'entreprise a entrepris depuis quelques années la réécriture des logiciels client lourds, devenus difficile et couteux à maintenir vers des applications web.
 
 Les nouvelles applications contrairement aux anciennes intègrent un lot important d'informations cartographiques.
@@ -78,6 +80,8 @@ Les nouvelles applications contrairement aux anciennes intègrent un lot importa
 # Logitud Solutions
 
 <!--
+2 minutes
+
 Le siège social de Logitud est basé au Parc des Collines de Mulhouse. La société compte deux autres agences où sont employés des formateurs et des commerciaux. L'activité a lieu principalement à l'agence de Mulhouse.
 -->
 
@@ -90,6 +94,8 @@ Le siège social de Logitud est basé au Parc des Collines de Mulhouse. La soci�
 ## Métiers concernés
 
 <!--
+5 minutes
+
 Elle distribue trois gamme de logiciels :
 - La gamme population qui est tournée vers la gestion administrative des collectivités. Elle facilite le travail des agents d'état civil et leurs échanges avec les administrés.
 - La gamme sécurité qui est orientée vers la gestion des métiers de la police municipale
@@ -121,9 +127,11 @@ J'ai souhaité en déposant ma candidature chez Logitud, gagner en compétence d
 # Géomatique
 
 <!--
+6 minutes
+
+
 La géomatique regroupe les pratiques, les méthodes et les technologies permettant de collecter (Photogramétrie, topographie et télédection spatial), analyser et diffuser les données géographiques. L'objectif final étant de les représenter, c'est le besoin auquel répond map-manager.
 
-Analyse: produits d'analyse de données comme ESRI, ArcGIS, QGIS...
 Objectif final Comité de pilotage de prendre une décision
 -->
 
@@ -133,20 +141,11 @@ Objectif final Comité de pilotage de prendre une décision
 
 ---
 
-## Projection
-
-<!--
-Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter le globe sur une surface plane.
--->
-
-![w:1125](images/geomatic/lambertCC_mercator84_merged.png)
-Lambert Conique Conforme                  World Geodetic System WGS 84
-
----
-
 ## Géométries
 
 <!--
+8 minutes
+
 En géomatique, sur les collections d'objets vectoriels comme par exemple le format GeoJSON dont un exemple est joint en annexe 1 du rapport, on distingue 3 types de géométries :
 - Le point
 - La ligne
@@ -165,7 +164,20 @@ Il est possible de créer des multi-géométrie, une géométrie qui contient un
 
 ---
 
+## Projection
+
+<!--
+Afin de représenter les données géographiques, il est nécessaire de définir un référentiel qui permet de définir les coordonnées (latitude, longitude) de chaque point sur la carte ainsi qu'une projection pour les données. Celle-ci permet de représenter le globe sur une surface plane.
+-->
+
+![w:1125](images/geomatic/lambertCC_mercator84_merged.png)
+Lambert Conique Conforme                  World Geodetic System WGS 84
+
+---
+
 # Le stage
+
+<!-- 8 minutes -->
 
 _Réécriture et amélioration d'une application SIG_
 
@@ -186,7 +198,10 @@ _Réécriture et amélioration d'une application SIG_
 ## Besoins
 
 <!--
-On m'a ensuite transmis les besoins de l'application. L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
+8,5 minutes
+
+
+L'application devra être dans un premier temps au minimum iso-fonctionnelle. On devra tenir compte de l'ergonomie pour l'utilisateur en gardant la carte toujours visible et dégagée. L'application doit être à page unique en regroupant les différents types d'objets géographiques.
 
 
 La pm veut poser la position de la caméra avec la zone de couverture du caméras. Les diférentes geom était interfacés à part.
@@ -209,6 +224,14 @@ La pm veut poser la position de la caméra avec la zone de couverture du caméra
 -->
 
 ![h:550 center](./images/map-manager/map-manager-wide.png)
+
+---
+
+## Fonctionnalités
+
+- Recherche d'adresses
+
+![w:800 center](./images/map-manager/address-search.png)
 
 ---
 
@@ -240,8 +263,8 @@ La pm veut poser la position de la caméra avec la zone de couverture du caméra
 ## Fonctionnalités
 
 - Dessin / Modification d'objets géographiques
-
-![w:1100 center](./images/map-manager/interactions-toolbar.png)
+  <!-- Transition: Cette fonctionnalité est surtout dédié aux petites et moyennes communes qui n'ont pas de ressources cartographiques pré-existantes  -->
+  ![w:1100 center](./images/map-manager/interactions-toolbar.png)
 
 ![w:300 center](./images/map-manager/move-interaction.jpeg)
 
@@ -251,15 +274,12 @@ La pm veut poser la position de la caméra avec la zone de couverture du caméra
 
 - Import d'objets géographiques
 
+<!-- Pour les plus grandes communes, elles pourront importer leurs ressources dans différents formats tel que le GeoJSON dont vous avez un exemple en annexe 1 de mon rapport, ou encore KML et shapefile.
+
+Possibiliter de choisir la projection appropriée à la source de données.
+-->
+
 ![bg right:58% contain](./images/map-manager/import-a-file.png)
-
----
-
-## Fonctionnalités
-
-- Recherche d'adresses
-
-![w:800 center](./images/map-manager/address-search.png)
 
 ---
 
@@ -269,7 +289,8 @@ La pm veut poser la position de la caméra avec la zone de couverture du caméra
 
 - Librairie Angular Commune
 
-<!-- Map-Viewer lib implémentée dans les différentes aplications pour afficher le rendu la carte.
+<!--
+Nous avons également une librairie commune qui s'appelle Map-Viewer qui est implémenté dans les différentes application permmettant d'afficher les objets géographiques administré par Map-Manager.
 -->
 
 ---
@@ -277,6 +298,8 @@ La pm veut poser la position de la caméra avec la zone de couverture du caméra
 ### Architecture SIG de Logitud
 
 <!--
+11 minutes
+
 Map-Manager est une Application Web Angular 9. Nous avons été contraints à ce choix par l'écosystème existant de Logitud.
 
 Map Manager intéragis avec les différents services cartographiques de l'entreprise. Elle récupère les géométries sur le serveur GeoToolbox. Ce serveur utilisant le framework Springboot permet de réaliser les traitements nécéssaires aux données géographique. Il permet notamment de gérer les buffers, les intersections de géométries, les calculs de distance.
@@ -293,6 +316,8 @@ Le dernier service cartographique avec lequel intéragis Map-Manager est le serv
 ## Existant
 
 <!--
+14
+
 L'application à mon arrivée, était déjà existante. Cependant, de nouveaux besoins ont nécessité une modification de l'agencement des fonctionnalités
 -->
 
@@ -304,6 +329,9 @@ L'application à mon arrivée, était déjà existante. Cependant, de nouveaux b
 ### Documentation
 
 <!--
+14,5 minutes
+
+
 J'ai suivi les principes du manual testing pour tester et découvrir les fonctionnalités. J'ai ensuite rédigé un document rendant compte des différentes fonctionnalités développés, joint en annexe 2 du rapport, afin de posséder un point de départ pour la nouvelle version.
 -->
 
@@ -314,6 +342,9 @@ J'ai suivi les principes du manual testing pour tester et découvrir les fonctio
 ## Prototypage
 
 <!--
+15 minutes
+
+
 J'ai débuté par le prototypage de la nouvelle interface utilisateur sur le logiciel Adobe XD. Je me suis inspiré pour la première version de la maquette de l'application mapillary. J'ai ensuite retravaillé la présentation pour conserver une cohérence avec les autres applications de la suite logicielle. Nous avons ensuite validé la maquette avec les représentants du service client afin de s'assurer de répondre aux nouveaux besoins.
 -->
 
@@ -325,6 +356,9 @@ J'ai débuté par le prototypage de la nouvelle interface utilisateur sur le log
 ## Intégration de la maquette
 
 <!--
+16 minutes
+
+
 J'ai ensuite débuté l'implémentation de la maquette dans l'application Angular
 -->
 
@@ -336,6 +370,9 @@ J'ai ensuite débuté l'implémentation de la maquette dans l'application Angula
 ### Documentation des modifications du code source
 
 <!--
+17 minutes
+
+
 Avant de mettre en production la nouvelle version de Map Manager, on m'a demandé de générer un changelog. Depuis le début du développement je me suis donné comme contrainte de suivre la convention de commit d'Angular; Présenter la convention
 -->
 
@@ -360,6 +397,8 @@ Cela m'a permis de générer automatiquement le changelog et de suivre la conven
 ## Evolutions futures
 
 <!--
+18 minutes
+
 Bien que l'application soit plus riche en fonctionnalités que la version précédente, plusieurs améliorations sont envisagées.
 -->
 
@@ -377,6 +416,8 @@ Bien que l'application soit plus riche en fonctionnalités que la version préc�
 # Conclusion
 
 <!--
+19 minutes
+
 Pour conclure, la nouvelle version de l'application réponds aux attentes et besoins que l'on m'a fixés. L'interface est ergonomique et l'application est fonctionnelle.
 J'ai réussi à trouver une solution pour chaque problèmes que j'ai rencontrés comme l'absence de documentation ou contraintes liés à l'entreprise.
 De plus, j'ai terminé la refonte rapidement, ce qui m'a permis de participer à d'autres projets.
